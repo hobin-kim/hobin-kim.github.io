@@ -1,9 +1,9 @@
 - title: Linkedin
-  url: https://www.linkedin.com/in/taeungyoon
+  url: https://www.linkedin.com/in/호빈-김-940001214/
   icon: fab fa-linkedin-in
 - title: GitHub
-  url: https://github.com/yoontaeung
+  url: https://github.com/hobin-kim
   icon: fab fa-github
-- title: Google Scholar
-  url: https://scholar.google.com/citations?hl=ko&user=XxLq0h8AAAAJ
-  icon: fab fa-google
+# - title: Google Scholar
+#   url: https://scholar.google.com/citations?hl=ko&user=XxLq0h8AAAAJ
+#   icon: fab fa-google
