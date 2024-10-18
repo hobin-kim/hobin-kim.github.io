@@ -3,7 +3,7 @@ layout: home
 title: Home
 ---
 
-I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group under the supervision of Professor Min Suk Kang. My research focuses on **how individuals can take proactive steps to manage their personal information and mitigate potential security threats when interacting with technology**. I am currently seeking a Ph.D. advisor and welcome any interested parties to reach out to me for collaboration.
+I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group under the supervision of Professor Min Suk Kang. My research focuses on **how individuals can take proactive steps to manage their personal information and mitigate potential security threats when interacting with technology**. I am currently <ins>seeking a Ph.D. advisor</ins> and welcome any interested parties to reach out to me for collaboration.
 
 <!-- I am currently pursuing a M.S. at KAIST, under the guidance of Professor Min Suk Kang in the [Network security and privacy](https://netsp.kaist.ac.kr) group. My research primarily focuses on the security of blockchain and distributed systems, with a growing interest in machine learning security. I completed my B.S. in Computer Science at Yonsei University, and I anticipate finishing my M.S. degree at KAIST in 2025. -->
 
