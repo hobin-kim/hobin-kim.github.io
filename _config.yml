@@ -1,8 +1,8 @@
-title: Taeung Yoon
+title: Hobin Kim
 description: Personal Homepage
-author: Taeung Yoon
+author: Hobin Kim
 avatar: /photo.jpeg
-email: yoontaeung@kaist.ac.kr
+email: ghqls1237@kaist.ac.kr
 
 plugins:
   - jekyll-seo-tag
@@ -33,14 +33,14 @@ exclude:
 
 # Jekyll SEO Tag (Optional)
 # =========================
-twitter:
-  username: yoontaeung
-  card: summary
-logo: logo.png
+# twitter:
+#   username: yoontaeung
+#   card: summary
+# logo: logo.png
 social:
-  name: Taeung Yoon
+  name: Hobin Kim
   links:
-    - https://github.com/yoontaeung
+    - https://github.com/hobin-kim
 google_site_verification: 
 lang: en
 skin: daylight
