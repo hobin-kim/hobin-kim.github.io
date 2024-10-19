@@ -37,24 +37,24 @@ During this process for fast packet transmission, I modified the [f-stack](https
 
 Although the project was discontinued, spending over a year tackling this problem allowed me to gain deep insights into networking topics such as the history of multicast, inter-AS dynamics, and fast blockchain message propagation systems.
 
-__Paran-girin__[(github)](https://github.com/dandicompany/project_parangirin).<br/>
+__Paran-girin__ [(github)](https://github.com/dandicompany/project_parangirin)<br/>
 _Feb 2021 - Oct 2021_<br/>
 This is an application designed to facilitate communication between parents and children through the character Paran-Girin (Blue Giraffe). To briefly introduce the app, Paran-Girin asks questions to the children, and they respond. As the front-end app developer, I primarily implemented communication-related features. These included displaying the giraffe gif on the main screen, utilizing TTS (text-to-speech) to ask the child a question, recording the child’s responses via the camera, and saving these recordings. I also developed the calendar UI, which displays the child’s responses by date.<br/> 
 
 I used the Flutter framework for development. Once completed, the app was released on both the Google Play Store and the App Store, receiving positive feedback from users, particularly for its ability to enhance interactions with children. <br/> 
 
-__Mad Camp__[(demo)](https://www.youtube.com/shorts/Ha194hPI0hM)<br/>
+__Mad Camp__ [(demo)](https://www.youtube.com/shorts/Ha194hPI0hM)<br/>
 _Jan 2021_ <br/>
 This was a four-week coding camp held at KAIST. Each week, participants planned and designed a different app. Among the apps I developed, one called “AR Treasure Hunter” received the Best Project Award. Similar to Pokémon Go, this app uses AR technology to allow players to find treasures hidden in the real world by developers.<br/>
 
 My primary roles were implementing the AR environment using Unity, enabling treasures to be hidden at actual physical locations, and creating the functionality that allows players to discover these treasures at specific locations. 
 
-__Minions Robot__[(demo)](https://www.youtube.com/watch?v=eK8QzA2e_r0)<br/>
+__Minions Robot__ [(demo)](https://www.youtube.com/watch?v=eK8QzA2e_r0)<br/>
 _Nov 2019_ <br/>
 This was part of a course project for the ID220 at KAIST. I felt that RC cars controlled solely by joysticks were too conventional, and I wanted to break away from that by enabling control through hand motions using Arduino, creating a more engaging interaction. I attached flexible thin-film pressure sensors to a glove, allowing it to detect bending motions so that users could control the RC car with hand gestures.<br/> 
 
 Additionally, I designed the RC car to resemble a Minion, giving it a more friendly and approachable appearance. I also added a special feature: when users form a mini heart gesture with their fingers, a flower pops up from the car’s head as a playful touch. 
 
-__Object Detector__[(demo)](https://www.youtube.com/shorts/3UqN9yb03Go)<br/>
+__Object Detector__ [(demo)](https://www.youtube.com/shorts/3UqN9yb03Go)<br/>
 _June 2019 - July 2019_ <br/>
 During my undergraduate studies, I conducted a month-long research project at the KAIST Biorobotics Lab. In this project, I utilized OpenCV to detect a square cuboid object captured by the RealSense camera and calculated the physical location of the object. Following this, I controlled a robotic arm, enabling it to lift the detected object. 
