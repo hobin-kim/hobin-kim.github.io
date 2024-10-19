@@ -8,6 +8,20 @@ I am currently a master’s student at KAIST, conducting research in the [Networ
 <!-- I am currently pursuing a M.S. at KAIST, under the guidance of Professor Min Suk Kang in the [Network security and privacy](https://netsp.kaist.ac.kr) group. My research primarily focuses on the security of blockchain and distributed systems, with a growing interest in machine learning security. I completed my B.S. in Computer Science at Yonsei University, and I anticipate finishing my M.S. degree at KAIST in 2025. -->
 
 ## Research Experiences
+Understanding User Privacy Perceptions about Common Features of Video Conferencing Platforms (Submitted at CHI'25)
+내 첫번째 usable security 연구였고, 
+
+Attacking PoW based DoS defense mechanism of Tor Onion Service (Submitted at USENIX Security'25)
+
+Klaytn Bug Report
+
+## Projects
+Fast Packet Transmission
+
+Paran-girin
+
+
+Mad camp
 
 
 <!-- ## Publications
