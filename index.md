@@ -51,7 +51,7 @@ My primary roles were implementing the AR environment using Unity, enabling trea
 
 __Minions Robot__[(demo)](https://www.youtube.com/watch?v=eK8QzA2e_r0)<br/>
 _Nov 2019_ <br/>
-This was part of an assignment for the ID220 course in the Department of Industrial Design at KAIST. I felt that RC cars controlled solely by joysticks were too conventional, and I wanted to break away from that by enabling control through hand motions using Arduino, creating a more engaging interaction. I attached flexible thin-film pressure sensors to a glove, allowing it to detect bending motions so that users could control the RC car with hand gestures.<br/> 
+This was part of a course project for the ID220 at KAIST. I felt that RC cars controlled solely by joysticks were too conventional, and I wanted to break away from that by enabling control through hand motions using Arduino, creating a more engaging interaction. I attached flexible thin-film pressure sensors to a glove, allowing it to detect bending motions so that users could control the RC car with hand gestures.<br/> 
 
 Additionally, I designed the RC car to resemble a Minion, giving it a more friendly and approachable appearance. I also added a special feature: when users form a mini heart gesture with their fingers, a flower pops up from the car’s head as a playful touch. 
 
