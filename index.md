@@ -4,7 +4,9 @@ title: Home
 ---
 
 I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group advised by Professor Min Suk Kang. As an undergraduate, I double-majored in Mechanical Engineering and Computer Science at KAIST.<br/>
+
 My research interests lie at the intersection of emerging technologies, human-computer interaction (HCI), and cybersecurity. Specifically, I am eager to investigate how people perceive privacy and security challenges in emerging technologies and explore novel solutions to address these issues.<br/>
+
 I am currently <ins>seeking a Ph.D. position</ins> and welcome any interested parties to reach out to me for collaboration.
 <!-- My research focus is to find answer for the following question: **"How can systems be designed to empower individuals to effectively protect their privacy and security?"**.  -->
 <!-- I am currently pursuing a M.S. at KAIST, under the guidance of Professor Min Suk Kang in the [Network security and privacy](https://netsp.kaist.ac.kr) group. My research primarily focuses on the security of blockchain and distributed systems, with a growing interest in machine learning security. I completed my B.S. in Computer Science at Yonsei University, and I anticipate finishing my M.S. degree at KAIST in 2025. -->
