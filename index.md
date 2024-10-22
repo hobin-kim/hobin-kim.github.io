@@ -23,7 +23,7 @@ _This is the beginning of my journey into usable security! I’m thrilled to tac
 
 __Attacking PoW-Based DoS Defense of Tor Onion Service (Submitted at USENIX Security'25)__<br/>
 _Sep 2023 - Sep 2024_ <br/>
-In August 2023, Tor onion service adopted Proof-of-work (PoW) based Denial-of-service (DoS) defense mechanism.[(See more detail in this link)](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt) Clients solve a PoW puzzle with a suggested difficulty level by the service to gain access. When the service becomes congested, the difficulty increases, allowing only clients with greater computational power to access it. This paper illustrates how maliciously inflating the difficulty level can make the system appear overloaded, thereby preventing legitimate clients from accessing the service.<br/>
+In August 2023, Tor onion service adopted Proof-of-work (PoW) based Denial-of-service (DoS) defense mechanism. [(See more detail in this link)](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt) Clients solve a PoW puzzle with a suggested difficulty level by the service to gain access. When the service becomes congested, the difficulty increases, allowing only clients with greater computational power to access it. This paper illustrates how maliciously inflating the difficulty level can make the system appear overloaded, thereby preventing legitimate clients from accessing the service.<br/>
 
 My primary contribution to this research was modifying the Tor client code to enable a malicious client to continuously send “introduce” messages to the target onion service. I also tested the attack in both Tor Shadow simulations and real-world environments.
 
