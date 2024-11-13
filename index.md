@@ -54,28 +54,30 @@ My primary roles were implementing the AR environment using Unity, enabling trea
 </details>
 
 <details>
-<summary> Web3 Project </summary>
-
+<summary> Web3 Project </summary> <br/>
+<div markdown="1">
 __Decentralized Survey Platform__ [(slides)](/blockchain_survey_proposal.pdf)[(whitepaper)](https://docs.google.com/document/d/1Jn1Z0rmFxxnQZb1yJqyllNcBznjwTSA1CSxqLWLZyCA/edit?tab=t.0) <br/>
 _Mar 2023 - June 2023_ <br/>
 As part of the CS492 course, I proposed a blockchain-based solution for survey platforms. In traditional survey platforms, researchers often face challenges in finding suitable participants and motivating them to engage in studies. From the participants’ perspective, privacy concerns arise when they are asked to share sensitive personal information. To address these issues, I proposed a decentralized survey platform that enables participants to verify their eligibility through Zero-Knowledge Proofs (ZKP) without revealing personal information. I led the technical design as the project’s **tech leader**, and our project earned **second place**.
+</div>
 </details> 
 
 <details>
-<summary> Hardware Prototyping</summary> 
+<summary> Hardware Prototyping</summary> <br/>
+<div markdown="1">
 
 __Minions Robot__ [(demo)](https://www.youtube.com/watch?v=eK8QzA2e_r0)<br/>
 _Nov 2019_ <br/>
 This was part of a course project for the ID220 at KAIST. I felt that RC cars controlled solely by joysticks were too conventional, and I wanted to break away from that by enabling control through hand motions using Arduino, creating a more engaging interaction. I attached flexible thin-film pressure sensors to a glove, allowing it to detect bending motions so that users could control the RC car with hand gestures.<br/> 
 
 Additionally, I designed the RC car to resemble a Minion, giving it a more friendly and approachable appearance. I also added a special feature: when users form a mini heart gesture with their fingers, a flower pops up from the car’s head as a playful touch. 
-
+</div>
 </details>
 
 
 <details>
-<summary> Others </summary> 
-
+<summary> Others </summary> <br/>
+<div markdown="1">
 __Optimizing Fast Packet Transmission for Efficient Blockchain Networks__ <br/>
 _Sep 2022 - Aug 2023_ <br/>
 This project spanned over a year but is currently discontinued. Initially, the goal was to design a system that would ensure fast, efficient message propagation and security from network attacks targeting blockchain by leveraging SCION network infrastructure.<br/> 
@@ -84,9 +86,8 @@ During this process for fast packet transmission, I modified the [f-stack](https
 
 Although the project was discontinued, spending over a year tackling this problem allowed me to gain deep insights into networking topics such as the history of multicast, inter-AS dynamics, and fast blockchain message propagation systems.
 
-
 __Object Detector__ [(demo)](https://www.youtube.com/shorts/3UqN9yb03Go)<br/>
 _June 2019 - July 2019_ <br/>
 During my undergraduate studies, I conducted a month-long research project at the KAIST Biorobotics Lab. In this project, I utilized OpenCV to detect a square cuboid object captured by the RealSense camera and calculated the physical location of the object. Following this, I controlled a robotic arm, enabling it to lift the detected object. 
-
+</div>
 </details>
