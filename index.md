@@ -23,13 +23,13 @@ _This is the beginning of my journey into usable security! I’m thrilled to tac
 
 __Attacking PoW-Based DoS Defense of Tor Onion Service (Submitted at USENIX Security'25)__<br/>
 _Sep 2023 - Sep 2024_ <br/>
-In August 2023, Tor onion service adopted Proof-of-work (PoW) based Denial-of-service (DoS) defense mechanism. [(See more detail in this link)](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt) Clients solve a PoW puzzle with a suggested difficulty level by the service to gain access. When the service becomes congested, the difficulty increases, allowing only clients with greater computational power to access it. This paper illustrates how maliciously inflating the difficulty level can make the system appear overloaded, thereby preventing legitimate clients from accessing the service.<br/>
+In August 2023, Tor onion service adopted Proof-of-work (PoW) based Denial-of-service (DoS) defense mechanism. [(Details)](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt) Clients solve a PoW puzzle with a suggested difficulty level by the service to gain access. When the service becomes congested, the difficulty increases, allowing only clients with greater computational power to access it. This paper illustrates how maliciously inflating the difficulty level can make the system appear overloaded, thereby preventing legitimate clients from accessing the service.<br/>
 
 My primary contribution to this research was modifying the Tor client code to enable a malicious client to continuously send “introduce” messages to the target onion service. I also tested the attack in both Tor Shadow simulations and real-world environments.
 
-__Klaytn Bug Report__<br/> [(report)](https://kir.kaia.io/t/the-8th-kir-nets-p-lab-kaist-securing-and-improving-bft-consensus-protocols-with-advanced-networking-progress-report-6/554)
+__Klaytn Bug Report__<br/> [(Report)](https://kir.kaia.io/t/the-8th-kir-nets-p-lab-kaist-securing-and-improving-bft-consensus-protocols-with-advanced-networking-progress-report-6/554)
 _July 2021 - July 2022 (undergrad intern)_<br/> 
-Klaytn blockchain system suffered from consensus delay on Apr 3, 2020. [(See more detail in this link)](https://medium.com/klaytn/analysis-on-consensus-delay-at-cypress-block-24-002-380-7db8cb366dc1). I suggest the round change mechanism triggers the root cause of the issue, which I analyzed at the code level. I shared the potential problem with the Klaytn development team.<br/> 
+Klaytn blockchain system suffered from consensus delay on Apr 3, 2020. [(Details)](https://medium.com/klaytn/analysis-on-consensus-delay-at-cypress-block-24-002-380-7db8cb366dc1). I suggest the round change mechanism triggers the root cause of the issue, which I analyzed at the code level. I shared the potential problem with the Klaytn development team.<br/> 
 
 All blockchain systems face challenges in tracking shared messages. To address this, I additionally built a testbed for monitoring the propagation of consensus messages in Klaytn and open-sourced it on [GitHub](https://github.com/NetSP-KAIST/Klaytn_CN_monitoring).
 
