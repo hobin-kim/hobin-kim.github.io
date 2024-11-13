@@ -63,3 +63,5 @@ Additionally, I designed the RC car to resemble a Minion, giving it a more frien
 __Object Detector__ [(demo)](https://www.youtube.com/shorts/3UqN9yb03Go)<br/>
 _June 2019 - July 2019_ <br/>
 During my undergraduate studies, I conducted a month-long research project at the KAIST Biorobotics Lab. In this project, I utilized OpenCV to detect a square cuboid object captured by the RealSense camera and calculated the physical location of the object. Following this, I controlled a robotic arm, enabling it to lift the detected object. 
+
+__Decentralized Survey Platform__[(whitepaper)](https://docs.google.com/document/d/1Jn1Z0rmFxxnQZb1yJqyllNcBznjwTSA1CSxqLWLZyCA/edit?tab=t.0)[(slides)](/blockchain_survey_proposal.pdf)
