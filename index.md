@@ -34,13 +34,8 @@ Klaytn blockchain system suffered from consensus delay on Apr 3, 2020. [(See mor
 All blockchain systems face challenges in tracking shared messages. To address this, I additionally built a testbed for monitoring the propagation of consensus messages in Klaytn and open-sourced it on [GitHub](https://github.com/NetSP-KAIST/Klaytn_CN_monitoring).
 
 ## Projects
-__Optimizing Fast Packet Transmission for Efficient Blockchain Networks__ <br/>
-_Sep 2022 - Aug 2023_ <br/>
-This project spanned over a year but is currently discontinued. Initially, the goal was to design a system that would ensure fast, efficient message propagation and security from network attacks targeting blockchain by leveraging SCION network infrastructure.<br/> 
-
-During this process for fast packet transmission, I modified the [f-stack](https://github.com/F-Stack/f-stack) and [mtcp](https://github.com/mtcp-stack/mtcp) to enable cut-through routing for TCP packets which is working on top of DPDK.<br/> 
-
-Although the project was discontinued, spending over a year tackling this problem allowed me to gain deep insights into networking topics such as the history of multicast, inter-AS dynamics, and fast blockchain message propagation systems.
+<details> 
+<summary> App Developments </summary>
 
 __Paran-girin__ [(github)](https://github.com/dandicompany/project_parangirin)<br/>
 _Feb 2021 - Oct 2021_<br/>
@@ -50,9 +45,22 @@ I used the Flutter framework for development. Once completed, the app was releas
 
 __Mad Camp__ [(demo)](https://www.youtube.com/shorts/Ha194hPI0hM)<br/>
 _Jan 2021_ <br/>
-This was a four-week coding camp held at KAIST. Each week, participants planned and designed a different app. Among the apps I developed, one called “AR Treasure Hunter” received the Best Project Award. Similar to Pokémon Go, this app uses AR technology to allow players to find treasures hidden in the real world by developers.<br/>
+This was a four-week coding camp held at KAIST. Each week, participants planned and designed a different app. Among the apps I and my teammate developed, one called “AR Treasure Hunter” received the Best Project Award. Similar to Pokémon Go, this app uses AR technology to allow players to find treasures hidden in the real world by developers.<br/>
 
 My primary roles were implementing the AR environment using Unity, enabling treasures to be hidden at actual physical locations, and creating the functionality that allows players to discover these treasures at specific locations. 
+
+</details>
+
+<details>
+<summary> Web3 Project </summary>
+
+__Decentralized Survey Platform__ [(slides)](/blockchain_survey_proposal.pdf)[(whitepaper)](https://docs.google.com/document/d/1Jn1Z0rmFxxnQZb1yJqyllNcBznjwTSA1CSxqLWLZyCA/edit?tab=t.0) <br/>
+_Mar 2023 - June 2023_ <br/>
+As part of the CS492 course, I proposed a blockchain-based solution for survey platforms. In traditional survey platforms, researchers often face challenges in finding suitable participants and motivating them to engage in studies. From the participants’ perspective, privacy concerns arise when they are asked to share sensitive personal information. To address these issues, I proposed a decentralized survey platform that enables participants to verify their eligibility through Zero-Knowledge Proofs (ZKP) without revealing personal information. I led the technical design as the project’s **tech leader**, and our project earned **second place**.
+</details> 
+
+<details>
+<summary> Hardware Prototyping</summary> 
 
 __Minions Robot__ [(demo)](https://www.youtube.com/watch?v=eK8QzA2e_r0)<br/>
 _Nov 2019_ <br/>
@@ -60,8 +68,23 @@ This was part of a course project for the ID220 at KAIST. I felt that RC cars co
 
 Additionally, I designed the RC car to resemble a Minion, giving it a more friendly and approachable appearance. I also added a special feature: when users form a mini heart gesture with their fingers, a flower pops up from the car’s head as a playful touch. 
 
+</details>
+
+
+<details>
+<summary> Others </summary> 
+
+__Optimizing Fast Packet Transmission for Efficient Blockchain Networks__ <br/>
+_Sep 2022 - Aug 2023_ <br/>
+This project spanned over a year but is currently discontinued. Initially, the goal was to design a system that would ensure fast, efficient message propagation and security from network attacks targeting blockchain by leveraging SCION network infrastructure.<br/> 
+
+During this process for fast packet transmission, I modified the [f-stack](https://github.com/F-Stack/f-stack) and [mtcp](https://github.com/mtcp-stack/mtcp) to enable cut-through routing for TCP packets which is working on top of DPDK.<br/> 
+
+Although the project was discontinued, spending over a year tackling this problem allowed me to gain deep insights into networking topics such as the history of multicast, inter-AS dynamics, and fast blockchain message propagation systems.
+
+
 __Object Detector__ [(demo)](https://www.youtube.com/shorts/3UqN9yb03Go)<br/>
 _June 2019 - July 2019_ <br/>
 During my undergraduate studies, I conducted a month-long research project at the KAIST Biorobotics Lab. In this project, I utilized OpenCV to detect a square cuboid object captured by the RealSense camera and calculated the physical location of the object. Following this, I controlled a robotic arm, enabling it to lift the detected object. 
 
-__Decentralized Survey Platform__[(whitepaper)](https://docs.google.com/document/d/1Jn1Z0rmFxxnQZb1yJqyllNcBznjwTSA1CSxqLWLZyCA/edit?tab=t.0)[(slides)](/blockchain_survey_proposal.pdf)
+</details>
