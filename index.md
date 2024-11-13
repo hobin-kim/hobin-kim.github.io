@@ -35,19 +35,29 @@ All blockchain systems face challenges in tracking shared messages. To address t
 
 ## Projects
 <details> 
-<summary> App Developments </summary>
+  <summary> App Developments </summary>
 
-__Paran-girin__ [(github)](https://github.com/dandicompany/project_parangirin)<br/>
-_Feb 2021 - Oct 2021_<br/>
-This is an application designed to facilitate communication between parents and children through the character Paran-Girin (Blue Giraffe). To briefly introduce the app, Paran-Girin asks questions to the children, and they respond. As the front-end app developer, I primarily implemented communication-related features. These included displaying the giraffe gif on the main screen, utilizing TTS (text-to-speech) to ask the child a question, recording the child’s responses via the camera, and saving these recordings. I also developed the calendar UI, which displays the child’s responses by date.<br/> 
+  <details>
+    <summary>Paran-girin</summary>
 
-I used the Flutter framework for development. Once completed, the app was released on both the Google Play Store and the App Store, receiving positive feedback from users, particularly for its ability to enhance interactions with children. <br/> 
+    __Paran-girin__ [(github)](https://github.com/dandicompany/project_parangirin)<br/>
+    _Feb 2021 - Oct 2021_<br/>
+    This is an application designed to facilitate communication between parents and children through the character Paran-Girin (Blue Giraffe). To briefly introduce the app, Paran-Girin asks questions to the children, and they respond. As the front-end app developer, I primarily implemented communication-related features. These included displaying the giraffe gif on the main screen, utilizing TTS (text-to-speech) to ask the child a question, recording the child’s responses via the camera, and saving these recordings. I also developed the calendar UI, which displays the child’s responses by date.<br/> 
 
-__Mad Camp__ [(demo)](https://www.youtube.com/shorts/Ha194hPI0hM)<br/>
-_Jan 2021_ <br/>
-This was a four-week coding camp held at KAIST. Each week, participants planned and designed a different app. Among the apps I and my teammate developed, one called “AR Treasure Hunter” received the Best Project Award. Similar to Pokémon Go, this app uses AR technology to allow players to find treasures hidden in the real world by developers.<br/>
+    I used the Flutter framework for development. Once completed, the app was released on both the Google Play Store and the App Store, receiving positive feedback from users, particularly for its ability to enhance interactions with children. <br/> 
 
-My primary roles were implementing the AR environment using Unity, enabling treasures to be hidden at actual physical locations, and creating the functionality that allows players to discover these treasures at specific locations. 
+  </details>
+
+  <details>
+    <summary>Mad Camp</summary>
+
+    __Mad Camp__ [(demo)](https://www.youtube.com/shorts/Ha194hPI0hM)<br/>
+    _Jan 2021_<br/>
+    This was a four-week coding camp held at KAIST. Each week, participants planned and designed a different app. Among the apps I and my teammate developed, one called “AR Treasure Hunter” received the Best Project Award. Similar to Pokémon Go, this app uses AR technology to allow players to find treasures hidden in the real world by developers.<br/>
+
+    My primary roles were implementing the AR environment using Unity, enabling treasures to be hidden at actual physical locations, and creating the functionality that allows players to discover these treasures at specific locations.
+
+  </details>
 
 </details>
 
