@@ -36,6 +36,7 @@ All blockchain systems face challenges in tracking shared messages. To address t
 ## Projects
 <details> 
 <summary> App Developments </summary> <br/>
+<div markdown="1">
 
 __Paran-girin__ [(github)](https://github.com/dandicompany/project_parangirin)<br/>
 _Feb 2021 - Oct 2021_<br/>
@@ -49,6 +50,7 @@ This was a four-week coding camp held at KAIST. Each week, participants planned 
 
 My primary roles were implementing the AR environment using Unity, enabling treasures to be hidden at actual physical locations, and creating the functionality that allows players to discover these treasures at specific locations. 
 
+</div>
 </details>
 
 <details>
