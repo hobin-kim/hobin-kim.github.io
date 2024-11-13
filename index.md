@@ -38,7 +38,7 @@ All blockchain systems face challenges in tracking shared messages. To address t
 <summary> App Developments </summary> <br/>
 <div markdown="1">
 
-__Paran-girin__ [(github)](https://github.com/dandicompany/project_parangirin)<br/>
+__Paran-girin__ [(demo1)](https://youtube.com/shorts/advdK7l2fjA?feature=share)[(demo2)](https://youtube.com/shorts/wroDGGG05WQ?feature=share)[(github)](https://github.com/dandicompany/project_parangirin)<br/>
 _Feb 2021 - Oct 2021_<br/>
 This is an application designed to facilitate communication between parents and children through the character Paran-Girin (Blue Giraffe). To briefly introduce the app, Paran-Girin asks questions to the children, and they respond. As the front-end app developer, I primarily implemented communication-related features. These included displaying the giraffe gif on the main screen, utilizing TTS (text-to-speech) to ask the child a question, recording the child’s responses via the camera, and saving these recordings. I also developed the calendar UI, which displays the child’s responses by date.<br/> 
 
