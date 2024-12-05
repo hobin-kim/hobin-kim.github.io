@@ -5,7 +5,7 @@ title: Home
 ## About Me
 I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group advised by Professor Min Suk Kang. As an undergraduate, I double-majored in Mechanical Engineering and Computer Science at KAIST.<br/>
 
-My research interests lie at the intersection of human-computer interaction (HCI) and cybersecurity. Specifically, I am eager to investigate how people perceive privacy and security challenges in online environments and explore novel solutions to address these issues.
+My research interests lie at the __intersection of human-computer interaction (HCI) and cybersecurity__. Specifically, I am eager to investigate how people perceive privacy and security challenges in online environments and explore novel solutions to address these issues.
 <!-- My research interests lie at the intersection of emerging technologies, human-computer interaction (HCI), and cybersecurity. Specifically, I am eager to investigate how people perceive privacy and security challenges in emerging technologies and explore novel solutions to address these issues.<br/> -->
 
 I am currently <ins>seeking a Ph.D. position</ins> and welcome any interested parties to reach out to me for collaboration.
@@ -38,7 +38,7 @@ All blockchain systems face challenges in tracking shared messages. To address t
 <summary> App Developments </summary> <br/>
 <div markdown="1">
 
-__Paran-girin__ [(demo1)](https://youtube.com/shorts/e_1FhJJl2s0?feature=share)[(github)](https://github.com/dandicompany/project_parangirin)<br/>
+__Paran-girin__ [(demo)](https://youtube.com/shorts/e_1FhJJl2s0?feature=share)[(github)](https://github.com/dandicompany/project_parangirin)<br/>
 <!-- https://youtube.com/shorts/advdK7l2fjA?feature=share -->
 _Feb 2021 - Oct 2021_<br/>
 This is an application designed to facilitate communication between parents and children through the character Paran-Girin (Blue Giraffe). To briefly introduce the app, Paran-Girin asks questions to the children, and they respond. As the front-end app developer, I primarily implemented communication-related features. These included displaying the giraffe gif on the main screen, utilizing TTS (text-to-speech) to ask the child a question, recording the child’s responses via the camera, and saving these recordings. I also developed the calendar UI, which displays the child’s responses by date.<br/> 
