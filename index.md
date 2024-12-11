@@ -5,7 +5,7 @@ title: Home
 ## About Me
 I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group advised by Professor Min Suk Kang. As an undergraduate, I double-majored in Mechanical Engineering and Computer Science at KAIST.<br/>
 
-My research interests lie at the __intersection of human-computer interaction (HCI) and cybersecurity__. Specifically, I am eager to investigate how people perceive privacy and security challenges in online environments and explore novel solutions to address these issues.
+My research interests lie at the __intersection of human-computer interaction (HCI) and cybersecurity__. Specifically, I am eager to understand how people perceive privacy and security challenges in online environments and to develop novel solutions that empower users to make informed privacy decisions.
 <!-- My research interests lie at the intersection of emerging technologies, human-computer interaction (HCI), and cybersecurity. Specifically, I am eager to investigate how people perceive privacy and security challenges in emerging technologies and explore novel solutions to address these issues.<br/> -->
 
 I am currently <ins>seeking a Ph.D. position</ins> and welcome any interested parties to reach out to me for collaboration.
