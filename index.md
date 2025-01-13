@@ -17,7 +17,7 @@ I am currently <ins>seeking a Ph.D. position</ins> and welcome any interested pa
 ## Research Experiences
 __Understanding User Privacy Perceptions in Video Conferencing: Insights from a Feature-Specific User Study (Submitted to PETS'25)__<br/>
 <!-- _Feb 2024 - Sep 2024_ <br/> -->
-_Usable security and Privacy, Survey, Quantitative analysis, Contextual integrity_<br/>
+Usable security and Privacy, Survey, Quantitative analysis, Contextual integrity <br/>
 
 <details>
 <summary> Details </summary> <br/>
@@ -27,10 +27,11 @@ A total of 769 participants responded, and the results were analyzed using quant
 
 _This is the beginning of my journey into usable security! I’m thrilled to tackle security and privacy issues regrading an end-user perspective. Stay tuned for more as I continue this exciting path!_
 </details>
+<br/>
 
 __Attacking PoW-Based DoS Defense of Tor Onion Service (Conditionally accepted to USENIX Security'25)__<br/>
 <!-- _Sep 2023 - Sep 2024_ <br/> -->
-_Network security, Tor Onion Service, Denial-of-service (DoS), Puzzle-based defense_ <br/>
+Network security, Tor Onion Service, Denial-of-service (DoS), Puzzle-based defense <br/>
 
 <details>
 <summary> Details </summary> <br/>
@@ -38,10 +39,11 @@ In August 2023, Tor onion service adopted Proof-of-work (PoW) based Denial-of-se
 
 My primary contribution to this research was modifying the Tor client code to enable a malicious client to continuously send “introduce” messages to the target onion service. I also tested the attack in both Tor Shadow simulations and real-world environments.
 </details>
+<br/>
 
 __Klaytn Bug Report__ [(Report)](https://kir.kaia.io/t/the-8th-kir-nets-p-lab-kaist-securing-and-improving-bft-consensus-protocols-with-advanced-networking-progress-report-6/554) 
 <!-- <br/>_July 2021 - July 2022 (undergrad intern)_<br/>  -->
-_Blockchain, Consensus, Testbed implementation, Open source_ <br/>
+Blockchain, Bug analysis, Testbed implementation, Open source <br/>
 
 <details>
 <summary> Details </summary> <br/>
