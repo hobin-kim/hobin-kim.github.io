@@ -4,13 +4,13 @@ title: Home
 ---
 ## About Me
 I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group advised by Professor Min Suk Kang. 
-I have a background in usable security, network security and undergrad level of mechanical engineering, where this unique background can bring me to the interdisciplinary research. 
+I have a research background in usable security and network security, where this unique background in human centered research with strong technical skills can bring me to the interdisciplinary research. 
 As an undergraduate, I double-majored in Mechanical Engineering and Computer Science at KAIST.<br/>
 
-My research interests focuses on diverse real-world security and privacy threats, and tries to solve them from human-centered perspective. Specifically, I am eager to understand how people perceive privacy and security challenges in online environments and to develop novel solutions that balance usability and privacy expectations. 
+My research interests focuses on diverse real-world security and privacy issues, and tries to solve them from human-centered perspective. Specifically, I am eager to understand how people perceive privacy and security challenges in online environments and to develop novel solutions that balance usability and privacy expectations. 
 <!-- My research interests lie at the intersection of emerging technologies, human-computer interaction (HCI), and cybersecurity. Specifically, I am eager to investigate how people perceive privacy and security challenges in emerging technologies and explore novel solutions to address these issues.<br/> -->
 
-I am currently <ins>seeking a Ph.D. position in usable security and privacy research</ins> and welcome any interested parties to reach out to me for collaboration.
+I am currently <ins><b>seeking a Ph.D. position in usable security and privacy research</b></ins> and welcome any interested parties to reach out to me for collaboration.
 <!-- My research focus is to find answer for the following question: **"How can systems be designed to empower individuals to effectively protect their privacy and security?"**.  -->
 <!-- I am currently pursuing a M.S. at KAIST, under the guidance of Professor Min Suk Kang in the [Network security and privacy](https://netsp.kaist.ac.kr) group. My research primarily focuses on the security of blockchain and distributed systems, with a growing interest in machine learning security. I completed my B.S. in Computer Science at Yonsei University, and I anticipate finishing my M.S. degree at KAIST in 2025. -->
 
