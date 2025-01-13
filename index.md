@@ -4,10 +4,10 @@ title: Home
 ---
 ## About Me
 I am currently a master’s student at KAIST, conducting research in the [Network security and privacy](https://netsp.kaist.ac.kr) group advised by Professor Min Suk Kang. 
-I have a research background in usable security and network security, where this unique background in human centered research with strong technical skills can bring me to the interdisciplinary research. 
+My research background spans usable security and network security, which provides me with a strong understanding in human-centered security research with technical skills. 
 As an undergraduate, I double-majored in Mechanical Engineering and Computer Science at KAIST.<br/>
 
-My research interests focuses on diverse real-world security and privacy issues, and tries to solve them from human-centered perspective. Specifically, I am eager to understand how people perceive privacy and security challenges in online environments and to develop novel solutions that balance usability and privacy expectations. 
+My research interests focuses on exploring real-world security and privacy threats and addressing them from a human-centered perspective. Specifically, I am eager to understand how people perceive privacy and security challenges and to develop novel solutions that balance usability and privacy expectations. 
 <!-- My research interests lie at the intersection of emerging technologies, human-computer interaction (HCI), and cybersecurity. Specifically, I am eager to investigate how people perceive privacy and security challenges in emerging technologies and explore novel solutions to address these issues.<br/> -->
 
 I am currently <ins><b>seeking a Ph.D. position in usable security and privacy research</b></ins> and welcome any interested parties to reach out to me for collaboration.
