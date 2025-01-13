@@ -51,7 +51,7 @@ Klaytn blockchain system suffered from consensus delay on Apr 3, 2020 [(Details)
 
 All blockchain systems face challenges in tracking shared messages. To address this, I additionally built a testbed for monitoring the propagation of consensus messages in Klaytn and open-sourced it on [GitHub](https://github.com/NetSP-KAIST/Klaytn_CN_monitoring).
 </details>
-</br>
+<br/>
 ## Projects
 <details> 
 <summary> App Developments </summary> <br/>
