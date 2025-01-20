@@ -25,7 +25,7 @@ A total of 769 participants responded, and the results were analyzed using quant
 _This is the beginning of my journey into usable security! I’m thrilled to tackle security and privacy issues regrading an end-user perspective. Stay tuned for more as I continue this exciting path!_
 <br/>
 
-__Attacking PoW-Based DoS Defense of Tor Onion Service (Conditionally accepted to USENIX Security'25)__<br/>
+__Attacking PoW-Based DoS Defense of Tor Onion Service (Accepted to USENIX Security'25)__<br/>
 _Network security, Tor Onion Service, Denial-of-service (DoS), Puzzle-based defense_
 
 In August 2023, Tor onion service adopted Proof-of-work (PoW) based Denial-of-service (DoS) defense mechanism [(Details)](https://gitlab.torproject.org/tpo/core/torspec/-/blob/main/proposals/327-pow-over-intro.txt). Clients solve a PoW puzzle with a suggested difficulty level by the service to gain access. When the service becomes congested, the difficulty increases, allowing only clients with greater computational power to access it. This paper illustrates how maliciously inflating the difficulty level can make the system appear overloaded, thereby preventing legitimate clients from accessing the service.<br/>
