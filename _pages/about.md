@@ -16,9 +16,9 @@ NEWS
     <tc><strong>Feb. 2025</strong></td>
     <td>🎓 I earned my Master’s degree from KAIST</td>
     <td><strong>Feb. 2025</strong></td>
-    <td>🎉 "Understanding User Privacy Perceptions in Video Conferencing: Insights from a Feature-Specific User Study" was accepted to PETS'25</td>
+    <td>🎉 My first authored paper on usable security and privacy was accepted to PETS'25</td>
     <td><strong>Jan. 2025</strong></td>
-    <td>🎉 "Onions Got Puzzled: On the Challenges of Mitigating Denial-of-Service Problems in Tor Onion Services" was accepted to Usenix Security'25</td>
+    <td>🎉 Paper on network security was accepted to Usenix Security'25</td>
   </tr>
 </table>
 
