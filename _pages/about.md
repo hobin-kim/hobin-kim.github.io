@@ -7,22 +7,24 @@ redirect_from:
   - /about.html
 ---
 
-Hello👋, I am Hobin, an incoming Ph.D. student at Carnegie Mellon University (CMU). 
+Hello 👋 I’m Hobin, an incoming Ph.D. student at Carnegie Mellon University (CMU). My research interests lie in addressing security and privacy challenges from a human-centered perspective.
+
+Before starting my Ph.D., I completed my Master’s degree in the [Network Security and Privacy Lab](https://netsp.kaist.ac.kr) at KAIST, where I was advised by the amazing Professor [Min Suk Kang](https://netsp.kaist.ac.kr/min-suk-kang).
 
 NEWS
 ======
-<table>
+<table style="border-collapse: collapse; border: none;">
   <tr>
-    <td><strong>Feb. 2025</strong></td>
-    <td>🎓 I earned my Master’s degree from KAIST</td>
+    <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
+    <td style="padding: 4px 0; border: none;">🎓 I earned my Master’s degree from KAIST</td>
   </tr>
   <tr>
-    <td><strong>Feb. 2025</strong></td>
-    <td>🎉 My first authored paper on usable security and privacy was accepted to PETS 2025</td>
+    <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
+    <td style="padding: 4px 0; border: none;">🎉 My first authored paper on usable security and privacy was accepted to PETS 2025</td>
   </tr>
   <tr>
-    <td><strong>Jan. 2025</strong></td>
-    <td>🎉 Paper on network security was accepted to USENIX Security 2025</td>
+    <td style="padding: 4px 12px; border: none;"><strong>Jan. 2025</strong></td>
+    <td style="padding: 4px 0; border: none;">🎉 Paper on network security was accepted to USENIX Security 2025</td>
   </tr>
 </table>
 
@@ -34,7 +36,7 @@ NEWS
 
 Publications
 ======
-(To be updated)
+(To be updated; see my Google Scholar!)
 
 
 <!-- Getting started
