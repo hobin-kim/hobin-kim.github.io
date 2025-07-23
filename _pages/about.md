@@ -15,7 +15,7 @@ For anyone who wants to talk to me, feel free to reach out via email!
 
 NEWS
 ======
-<table style="border-collapse: collapse; border: none;">
+<table style="border-collapse: collapse; border: none; font-size: 16px;">
   <tr>
     <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
     <td style="padding: 4px 0; border: none;">🎓 I earned my Master’s degree from KAIST</td>
