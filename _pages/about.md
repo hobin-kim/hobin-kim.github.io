@@ -11,6 +11,8 @@ Hello 👋 I’m Hobin, an incoming Ph.D. student at Carnegie Mellon University 
 
 Before starting my Ph.D., I completed my Master’s degree in the [Network Security and Privacy Lab](https://netsp.kaist.ac.kr) at KAIST, where I was advised by the amazing Professor [Min Suk Kang](https://netsp.kaist.ac.kr/min-suk-kang).
 
+For anyone who wants to talk to me, feel free to reach out via email!
+
 NEWS
 ======
 <table style="border-collapse: collapse; border: none;">
