@@ -9,9 +9,18 @@ redirect_from:
 
 Hello👋, I am Hobin, an incoming Ph.D. student at Carnegie Mellon University (CMU). 
 
-NEWS🎉
+NEWS
 ======
-(To be updated)
+<table>
+  <tr>
+    <tc><strong>Feb. 2025</strong></td>
+    <td>🎓 I earned my Master’s degree from KAIST</td>
+    <td><strong>Feb. 2025</strong></td>
+    <td>🎉 "Understanding User Privacy Perceptions in Video Conferencing: Insights from a Feature-Specific User Study" was accepted to PETS'25</td>
+    <td><strong>Jan. 2025</strong></td>
+    <td>🎉 "Onions Got Puzzled: On the Challenges of Mitigating Denial-of-Service Problems in Tor Onion Services" was accepted to Usenix Security'25</td>
+  </tr>
+</table>
 
 <!-- For those users that need more advanced functionality, the template also supports the following popular tools:
 - [MathJax](https://www.mathjax.org/) for mathematical equations
@@ -19,7 +28,7 @@ NEWS🎉
 - [Plotly](https://plotly.com/javascript/) for plotting -->
 
 
-Publications📖
+Publications
 ======
 (To be updated)
 
