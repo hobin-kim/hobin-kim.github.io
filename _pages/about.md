@@ -13,12 +13,16 @@ NEWS
 ======
 <table>
   <tr>
-    <tc><strong>Feb. 2025</strong></td>
-    <td>🎓 I earned my Master’s degree from KAIST</td>
     <td><strong>Feb. 2025</strong></td>
-    <td>🎉 My first authored paper on usable security and privacy was accepted to PETS'25</td>
+    <td>🎓 I earned my Master’s degree from KAIST</td>
+  </tr>
+  <tr>
+    <td><strong>Feb. 2025</strong></td>
+    <td>🎉 My first authored paper on usable security and privacy was accepted to PETS 2025</td>
+  </tr>
+  <tr>
     <td><strong>Jan. 2025</strong></td>
-    <td>🎉 Paper on network security was accepted to Usenix Security'25</td>
+    <td>🎉 Paper on network security was accepted to USENIX Security 2025</td>
   </tr>
 </table>
 
