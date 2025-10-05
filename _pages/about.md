@@ -15,7 +15,7 @@ For anyone who wants to talk to me, feel free to reach out via email!
 
 <h1>NEWS</h1>
 <div style="
-  max-height: 200px;
+  max-height: 190px;
   overflow-y: auto;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -24,18 +24,23 @@ For anyone who wants to talk to me, feel free to reach out via email!
   scroll-behavior: smooth;
 ">
 
+
   <table style="border-collapse: collapse; border: none; font-size: 16px; width: 100%;">
     <tr>
-      <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
-      <td style="padding: 4px 0; border: none;">🎓 I earned my Master’s degree from KAIST</td>
+      <td style="padding: 4px 12px; border: none;"><strong>Aug. 2025</strong></td>
+      <td style="padding: 4px 0; border: none;">🥳 I'm excited to begin my Ph.D. journey. Stay tuned for what's next!</td>
     </tr>
     <tr>
       <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
-      <td style="padding: 4px 0; border: none;">🎉 My first authored paper on usable security and privacy was accepted to PETS 2025</td>
+      <td style="padding: 4px 0; border: none;">🎓 I earned my Master’s degree from KAIST.</td>
+    </tr>
+    <tr>
+      <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
+      <td style="padding: 4px 0; border: none;">🎉 My first authored paper on usable security and privacy was accepted to PETS 2025.</td>
     </tr>
     <tr>
       <td style="padding: 4px 12px; border: none;"><strong>Jan. 2025</strong></td>
-      <td style="padding: 4px 0; border: none;">🎉 Paper on network security was accepted to USENIX Security 2025</td>
+      <td style="padding: 4px 0; border: none;">🎉 Paper on network security was accepted to USENIX Security 2025.</td>
     </tr>
   </table>
 
