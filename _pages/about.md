@@ -13,14 +13,14 @@ Before starting my Ph.D., I completed my Master’s degree in the [Network Secur
 
 For anyone who wants to talk to me, feel free to reach out via email!
 
-<h2>NEWS</h2>
+<h1>NEWS</h1>
 <div style="
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 8px;
   padding: 8px 12px;
-  background-color: #fafafa;
+  background-color: #fdfdfd;
   scroll-behavior: smooth;
 ">
 
