@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello 👋 I’m Hobin, an first-year Ph.D. student at Carnegie Mellon University (CMU). I love to be co-advised by Professor [Nicolas Christin](https://www.andrew.cmu.edu/user/nicolasc/) and Professor Lujo Bauer. I am interested in exploring security and privacy challenges in AI, addressing them through both human-centered and technical approaches. 
+Hello 👋 I’m Hobin, an first-year Ph.D. student at Carnegie Mellon University (CMU), where I am fortuate to co-advised by Professor [Nicolas Christin](https://www.andrew.cmu.edu/user/nicolasc/) and Professor [Lujo Bauer](https://users.ece.cmu.edu/~lbauer/). I am currently interested in exploring security and privacy challenges in AI, addressing them through both human-centered and technical approaches. 
 
 Before starting my Ph.D., I completed my Master’s degree in the [Network Security and Privacy Lab](https://netsp.kaist.ac.kr) at KAIST, where I was advised by the amazing Professor [Min Suk Kang](https://netsp.kaist.ac.kr/min-suk-kang).
 
