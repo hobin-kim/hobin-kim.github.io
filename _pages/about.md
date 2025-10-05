@@ -7,28 +7,39 @@ redirect_from:
   - /about.html
 ---
 
-Hello 👋 I’m Hobin, an incoming Ph.D. student at Carnegie Mellon University (CMU). My research interests lie in addressing security and privacy challenges from a human-centered perspective.
+Hello 👋 I’m Hobin, an first-year Ph.D. student at Carnegie Mellon University (CMU). I love to be co-advised by Professor [Nicolas Christin](https://www.andrew.cmu.edu/user/nicolasc/) and Professor Lujo Bauer. I am interested in exploring security and privacy challenges in AI, addressing them through both human-centered and technical approaches. 
 
 Before starting my Ph.D., I completed my Master’s degree in the [Network Security and Privacy Lab](https://netsp.kaist.ac.kr) at KAIST, where I was advised by the amazing Professor [Min Suk Kang](https://netsp.kaist.ac.kr/min-suk-kang).
 
 For anyone who wants to talk to me, feel free to reach out via email!
 
-NEWS
-======
-<table style="border-collapse: collapse; border: none; font-size: 16px;">
-  <tr>
-    <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
-    <td style="padding: 4px 0; border: none;">🎓 I earned my Master’s degree from KAIST</td>
-  </tr>
-  <tr>
-    <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
-    <td style="padding: 4px 0; border: none;">🎉 My first authored paper on usable security and privacy was accepted to PETS 2025</td>
-  </tr>
-  <tr>
-    <td style="padding: 4px 12px; border: none;"><strong>Jan. 2025</strong></td>
-    <td style="padding: 4px 0; border: none;">🎉 Paper on network security was accepted to USENIX Security 2025</td>
-  </tr>
-</table>
+<h2>NEWS</h2>
+<div style="
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: #fafafa;
+  scroll-behavior: smooth;
+">
+
+  <table style="border-collapse: collapse; border: none; font-size: 16px; width: 100%;">
+    <tr>
+      <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
+      <td style="padding: 4px 0; border: none;">🎓 I earned my Master’s degree from KAIST</td>
+    </tr>
+    <tr>
+      <td style="padding: 4px 12px; border: none;"><strong>Feb. 2025</strong></td>
+      <td style="padding: 4px 0; border: none;">🎉 My first authored paper on usable security and privacy was accepted to PETS 2025</td>
+    </tr>
+    <tr>
+      <td style="padding: 4px 12px; border: none;"><strong>Jan. 2025</strong></td>
+      <td style="padding: 4px 0; border: none;">🎉 Paper on network security was accepted to USENIX Security 2025</td>
+    </tr>
+  </table>
+
+</div>
 
 <!-- For those users that need more advanced functionality, the template also supports the following popular tools:
 - [MathJax](https://www.mathjax.org/) for mathematical equations
