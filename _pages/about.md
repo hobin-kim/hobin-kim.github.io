@@ -54,8 +54,22 @@ For anyone who wants to talk to me, feel free to reach out via email!
 
 Publications
 ======
-(To be updated; see my Google Scholar!)
+### 2025
 
+<ul>
+  <li>
+    <strong> Onions Got Puzzled: On the Challenges of Mitigating {Denial-of-Service} Problems in Tor Onion Services </strong><br>
+    Jinseo Lee, <u>Hobin Kim</u>, Min Suk Kang <br>
+    In <em> USENIX Security'25 </em><br>
+    <a href="https://www.usenix.org/conference/usenixsecurity25/presentation/lee">[paper]</a>
+  </li>
+  <li>
+    <strong> Understanding User Privacy Perceptions in Video Conferencing: Insights from a Feature-Specific User Study </strong><br>
+    <u>Hobin Kim</u>, Wonho Song, Joseph Seering, Min Suk Kang <br>
+    In <em>PETS'25</em><br>
+    <a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f465_paper.pdf">[paper]</a>
+  </li>
+</ul>
 
 <!-- Getting started
 ======
