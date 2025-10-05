@@ -23,8 +23,6 @@ For anyone who wants to talk to me, feel free to reach out via email!
   background-color: #fdfdfd;
   scroll-behavior: smooth;
 ">
-
-
   <table style="border-collapse: collapse; border: none; font-size: 16px; width: 100%;">
     <tr>
       <td style="padding: 4px 12px; border: none;"><strong>Aug. 2025</strong></td>
@@ -45,12 +43,7 @@ For anyone who wants to talk to me, feel free to reach out via email!
   </table>
 
 </div>
-
-<!-- For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting -->
-
+<br>
 
 Publications
 ======
@@ -59,13 +52,13 @@ Publications
 <ul>
   <li>
     <strong> Onions Got Puzzled: On the Challenges of Mitigating {Denial-of-Service} Problems in Tor Onion Services </strong><br>
-    Jinseo Lee, <u>Hobin Kim</u>, Min Suk Kang <br>
+    Jinseo Lee, <b><u>Hobin Kim</u></b>, Min Suk Kang <br>
     In USENIX Security'25 (Honorable Mention)<br>
     <a href="https://www.usenix.org/conference/usenixsecurity25/presentation/lee">[paper]</a>
   </li>
   <li>
     <strong> Understanding User Privacy Perceptions in Video Conferencing: Insights from a Feature-Specific User Study </strong><br>
-    <u>Hobin Kim</u>, Wonho Song, Joseph Seering, Min Suk Kang <br>
+    <b><u>Hobin Kim</u></b>, Wonho Song, Joseph Seering, Min Suk Kang <br>
     In PETS'25<br>
     <a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f465_paper.pdf">[paper]</a>
   </li>
