@@ -60,7 +60,7 @@ Publications
     <strong> Understanding User Privacy Perceptions in Video Conferencing: Insights from a Feature-Specific User Study </strong><br>
     <b><u>Hobin Kim</u></b>, Wonho Song, Joseph Seering, Min Suk Kang <br>
     In PETS'25<br>
-    <a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f465_paper.pdf">[paper]</a>
+    <a href="https://petsymposium.org/popets/2025/popets-2025-0096.php">[paper]</a>
   </li>
 </ul>
 
