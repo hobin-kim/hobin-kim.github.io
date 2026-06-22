@@ -321,27 +321,28 @@ author_profile: false
     btn.disabled = true;
     btn.textContent = '...';
 
-    fetch(API_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: JSON.stringify({ text: text })
-    }).then(function() {
-      input.value = '';
-      statusEl.textContent = 'Thanks for sharing! ✓';
-      setTimeout(function() { statusEl.textContent = ''; }, 3000);
+    var submitUrl = API_URL + '?submit=' + encodeURIComponent(text);
+    fetch(submitUrl)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        input.value = '';
+        statusEl.textContent = 'Thanks for sharing! ✓';
+        setTimeout(function() { statusEl.textContent = ''; }, 3000);
 
-      // Update local cache and re-render after a short delay
-      if (cachedData) cachedData.push({ text: text });
-      else cachedData = [{ text: text }];
-
-      rendering = false;
-      setTimeout(loadCloud, 300);
-    }).catch(function() {
-      statusEl.textContent = 'Something went wrong. Please try again.';
-    }).finally(function() {
-      btn.disabled = false;
-      btn.textContent = 'Submit';
-    });
+        cachedData = data;
+        countEl.textContent = data.length;
+        rendering = false;
+        setTimeout(function() {
+          renderCloud(processWords(data.map(function(d) { return d.text; })));
+        }, 100);
+      })
+      .catch(function() {
+        statusEl.textContent = 'Something went wrong. Please try again.';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit';
+      });
   });
 
   var resizeTimer;

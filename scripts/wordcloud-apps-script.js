@@ -12,13 +12,26 @@
  *    - Who has access: Anyone
  * 6. Copy the deployment URL
  * 7. Paste it into _config.yml as wordcloud_api_url
+ *
+ * IMPORTANT: If you update this code, you must create a NEW deployment
+ * (Deploy > New deployment), not just save. The old URL keeps the old code.
  */
 
 function doGet(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  // Handle submit via GET parameter
+  var submitText = (e.parameter && e.parameter.submit) || '';
+  if (submitText) {
+    var text = String(submitText).trim().substring(0, 200);
+    if (text) {
+      sheet.appendRow([text, new Date()]);
+    }
+  }
+
+  // Return all responses
   var data = sheet.getDataRange().getValues();
   var responses = [];
-
   for (var i = 1; i < data.length; i++) {
     if (data[i][0]) {
       responses.push({
@@ -30,24 +43,5 @@ function doGet(e) {
 
   return ContentService
     .createTextOutput(JSON.stringify(responses))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-
-function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-
-  try {
-    var body = JSON.parse(e.postData.contents);
-    var text = String(body.text || '').trim().substring(0, 200);
-
-    if (text) {
-      sheet.appendRow([text, new Date()]);
-    }
-  } catch (err) {
-    // ignore malformed requests
-  }
-
-  return ContentService
-    .createTextOutput(JSON.stringify({ status: 'ok' }))
     .setMimeType(ContentService.MimeType.JSON);
 }
