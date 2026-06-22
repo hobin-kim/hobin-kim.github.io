@@ -1,17 +1,11 @@
 ---
 permalink: /ai-concern/
-title: "AI Concern Cloud"
+title: ""
 author_profile: false
 ---
 
 <div id="ac-page">
-  <div class="ac-blob ac-blob-1"></div>
-  <div class="ac-blob ac-blob-2"></div>
-  <div class="ac-blob ac-blob-3"></div>
-
   <div id="ac-inner">
-    <a href="/" id="ac-back">← Back to site</a>
-
     <h1 id="ac-title">What's Your AI Concern?</h1>
     <p id="ac-subtitle">
       I'm working on AI security &amp; privacy and curious about your concerns when you interact with AI. <br>
@@ -43,45 +37,7 @@ author_profile: false
 <style>
   #ac-page {
     position: relative;
-    min-height: 80vh;
-    overflow: hidden;
-  }
-
-  /* Blobs */
-  .ac-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.35;
-    pointer-events: none;
-    animation: acFloat 10s ease-in-out infinite alternate;
-  }
-  html[data-theme="dark"] .ac-blob { opacity: 0.15; }
-
-  .ac-blob-1 {
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, #a5d8ff, #d0bfff);
-    top: -80px; left: -60px;
-  }
-  .ac-blob-2 {
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, #bac8ff, #eebefa);
-    bottom: -60px; right: -40px;
-    animation-delay: -3s;
-  }
-  .ac-blob-3 {
-    width: 220px; height: 220px;
-    background: radial-gradient(circle, #c3fae8, #a5d8ff);
-    top: 30%; right: 5%;
-    animation-delay: -6s;
-  }
-  html[data-theme="dark"] .ac-blob-1 { background: radial-gradient(circle, #1c3a5e, #2d1b69); }
-  html[data-theme="dark"] .ac-blob-2 { background: radial-gradient(circle, #1b2a6e, #3b1f5e); }
-  html[data-theme="dark"] .ac-blob-3 { background: radial-gradient(circle, #0f3b3d, #1c3a5e); }
-
-  @keyframes acFloat {
-    0%   { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(20px, -18px) scale(1.06); }
+    min-height: 60vh;
   }
 
   /* Layout */
@@ -96,17 +52,6 @@ author_profile: false
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
-  #ac-back {
-    display: inline-block;
-    margin-bottom: 1.5em;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--global-text-color-light);
-    text-decoration: none;
-    border-bottom: none !important;
-  }
-  #ac-back:hover { color: var(--global-link-color); }
 
   #ac-title {
     font-size: clamp(1.5rem, 4.5vw, 2.2rem);
