@@ -211,7 +211,6 @@ author_profile: false
   var btn = document.getElementById('ac-btn');
   var statusEl = document.getElementById('ac-status');
   var countEl = document.getElementById('ac-count');
-  var rendering = false;
 
   var STOP_WORDS = new Set([
     'a','an','the','and','or','but','in','on','at','to','for','of','with',
@@ -259,7 +258,9 @@ author_profile: false
   }
 
   function renderCloud(words) {
-    if (rendering) return;
+    // Abort any in-progress render
+    WordCloud(canvas, { list: [] });
+
     var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -273,27 +274,25 @@ author_profile: false
 
     var maxCount = Math.max.apply(null, words.map(function(w) { return w[1]; }));
     var colors = getColors();
-    rendering = true;
 
-    WordCloud(canvas, {
-      list: words,
-      gridSize: Math.round(8 * (canvas.width / 600)),
-      weightFactor: function(size) {
-        var scale = canvas.width / 600;
-        return Math.max(16, (size / maxCount) * 56 * scale);
-      },
-      fontFamily: 'Inter, -apple-system, sans-serif',
-      fontWeight: '700',
-      color: function() { return colors[Math.floor(Math.random() * colors.length)]; },
-      rotateRatio: 0.2,
-      rotationSteps: 2,
-      backgroundColor: 'transparent',
-      shuffle: true,
-      drawOutOfBound: false,
-      wait: 30,
-    });
-
-    setTimeout(function() { rendering = false; }, 500);
+    setTimeout(function() {
+      WordCloud(canvas, {
+        list: words,
+        gridSize: Math.round(8 * (canvas.width / 600)),
+        weightFactor: function(size) {
+          var scale = canvas.width / 600;
+          return Math.max(16, (size / maxCount) * 56 * scale);
+        },
+        fontFamily: 'Inter, -apple-system, sans-serif',
+        fontWeight: '700',
+        color: function() { return colors[Math.floor(Math.random() * colors.length)]; },
+        rotateRatio: 0.2,
+        rotationSteps: 2,
+        backgroundColor: 'transparent',
+        shuffle: true,
+        drawOutOfBound: false,
+      });
+    }, 50);
   }
 
   function resizeCanvas() {
@@ -325,7 +324,7 @@ author_profile: false
   function handleData(data) {
     cachedData = data;
     countEl.textContent = data.length;
-    rendering = false;
+    resizeCanvas();
     renderCloud(processWords(data.map(function(d) { return d.text; })));
   }
 
@@ -369,12 +368,10 @@ author_profile: false
   var resizeTimer;
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
-    rendering = false;
     resizeTimer = setTimeout(loadCloud, 250);
   });
 
   new MutationObserver(function() {
-    rendering = false;
     loadCloud();
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
