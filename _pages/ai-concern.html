@@ -180,18 +180,15 @@ author_profile: false
   function processWords(texts) {
     var freq = {};
     texts.forEach(function(text) {
-      // Split by commas first to treat "data leakage, deepfakes" as separate phrases
       text.split(/,/).forEach(function(phrase) {
         var words = phrase.toLowerCase().trim()
           .replace(/[^a-z0-9\s\-]/g, ' ')
           .split(/\s+/)
           .filter(function(w) { return w.length > 2 && !STOP_WORDS.has(w); });
-        // Keep multi-word phrases together (e.g., "data leakage" → "data leakage")
         if (words.length >= 2 && words.length <= 3) {
           var joined = words.join(' ');
           freq[joined] = (freq[joined] || 0) + 1;
         }
-        // Also count individual words
         words.forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
       });
     });
@@ -202,7 +199,6 @@ author_profile: false
   }
 
   function renderCloud(words) {
-    // Abort any in-progress render
     WordCloud(canvas, { list: [] });
 
     var ctx = canvas.getContext('2d');
@@ -247,7 +243,6 @@ author_profile: false
 
   var cachedData = null;
 
-  // JSONP helper — bypasses CORS entirely
   function jsonp(params, callback) {
     var cbName = '_wc_' + Date.now() + '_' + Math.random().toString(36).slice(2);
     window[cbName] = function(data) {
@@ -285,7 +280,6 @@ author_profile: false
     });
   }
 
-  // Global submit function — called by button onclick
   window.submitConcern = function() {
     var text = input.value.trim();
     if (!text || !API_URL) return;
@@ -309,7 +303,6 @@ author_profile: false
     });
   };
 
-  // Allow Enter key to submit
   input.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') { e.preventDefault(); window.submitConcern(); }
   });

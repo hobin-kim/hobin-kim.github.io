@@ -149,7 +149,7 @@ social:
 
 
 # Word Cloud API (Google Apps Script URL)
-wordcloud_api_url            : "https://script.google.com/macros/s/AKfycbzcadcOvJAhK9JcU44sTRDJ3GEypBjeSIx0IFBYpCpnc-2wKRd12mAtELfhUXxn7QIL/exec"
+wordcloud_api_url            : "https://script.google.com/macros/s/AKfycbyw03uqeMNQBAHtZa7-y-PLrkCiX1zduAqp2bcFXFaPPoHRn3nQc6-fyFDPJotu6hmz/exec"
 
 # Analytics
 analytics:
