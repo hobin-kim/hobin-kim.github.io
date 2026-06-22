@@ -237,11 +237,20 @@ author_profile: false
   function processWords(texts) {
     var freq = {};
     texts.forEach(function(text) {
-      text.toLowerCase()
-        .replace(/[^a-z0-9\s\-]/g, ' ')
-        .split(/\s+/)
-        .filter(function(w) { return w.length > 2 && !STOP_WORDS.has(w); })
-        .forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
+      // Split by commas first to treat "data leakage, deepfakes" as separate phrases
+      text.split(/,/).forEach(function(phrase) {
+        var words = phrase.toLowerCase().trim()
+          .replace(/[^a-z0-9\s\-]/g, ' ')
+          .split(/\s+/)
+          .filter(function(w) { return w.length > 2 && !STOP_WORDS.has(w); });
+        // Keep multi-word phrases together (e.g., "data leakage" → "data leakage")
+        if (words.length >= 2 && words.length <= 3) {
+          var joined = words.join(' ');
+          freq[joined] = (freq[joined] || 0) + 1;
+        }
+        // Also count individual words
+        words.forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
+      });
     });
     return Object.entries(freq)
       .sort(function(a, b) { return b[1] - a[1]; })
