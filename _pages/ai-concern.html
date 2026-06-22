@@ -20,6 +20,7 @@ author_profile: false
         placeholder="e.g., data leakage, deepfakes, surveillance..."
         maxlength="200"
         autocomplete="off"
+        onkeydown="if(event.key==='Enter'){event.preventDefault();submitConcern();}"
       >
       <button type="button" id="ac-btn" onclick="submitConcern()">Submit</button>
     </div>
@@ -181,15 +182,9 @@ author_profile: false
     var freq = {};
     texts.forEach(function(text) {
       text.split(/,/).forEach(function(phrase) {
-        var words = phrase.toLowerCase().trim()
-          .replace(/[^a-z0-9\s\-]/g, ' ')
-          .split(/\s+/)
-          .filter(function(w) { return w.length > 2 && !STOP_WORDS.has(w); });
-        if (words.length >= 2 && words.length <= 3) {
-          var joined = words.join(' ');
-          freq[joined] = (freq[joined] || 0) + 1;
-        } else {
-          words.forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
+        var trimmed = phrase.toLowerCase().trim().replace(/[^a-z0-9\s\-]/g, ' ').replace(/\s+/g, ' ').trim();
+        if (trimmed.length > 1) {
+          freq[trimmed] = (freq[trimmed] || 0) + 1;
         }
       });
     });
