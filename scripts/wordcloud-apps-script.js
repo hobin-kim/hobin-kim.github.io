@@ -1,5 +1,5 @@
 /**
- * Google Apps Script for Word Cloud API
+ * Google Apps Script for Word Cloud API (JSONP version)
  *
  * Setup:
  * 1. Create a new Google Sheet
@@ -13,8 +13,8 @@
  * 6. Copy the deployment URL
  * 7. Paste it into _config.yml as wordcloud_api_url
  *
- * IMPORTANT: If you update this code, you must create a NEW deployment
- * (Deploy > New deployment), not just save. The old URL keeps the old code.
+ * IMPORTANT: If you update this code, create a NEW deployment
+ * (Deploy > New deployment). The old URL keeps the old code.
  */
 
 function doGet(e) {
@@ -41,7 +41,17 @@ function doGet(e) {
     }
   }
 
+  var json = JSON.stringify(responses);
+
+  // Support JSONP callback to bypass CORS
+  var callback = (e.parameter && e.parameter.callback) || '';
+  if (callback) {
+    return ContentService
+      .createTextOutput(callback + '(' + json + ')')
+      .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+
   return ContentService
-    .createTextOutput(JSON.stringify(responses))
+    .createTextOutput(json)
     .setMimeType(ContentService.MimeType.JSON);
 }

@@ -304,22 +304,42 @@ author_profile: false
 
   var cachedData = null;
 
+  // JSONP helper — bypasses CORS entirely
+  function jsonp(params, callback) {
+    var cbName = '_wc_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    window[cbName] = function(data) {
+      delete window[cbName];
+      callback(null, data);
+    };
+    var script = document.createElement('script');
+    script.src = API_URL + '?' + params + '&callback=' + cbName;
+    script.onerror = function() {
+      delete window[cbName];
+      script.remove();
+      callback('error');
+    };
+    script.onload = function() { script.remove(); };
+    document.head.appendChild(script);
+  }
+
+  function handleData(data) {
+    cachedData = data;
+    countEl.textContent = data.length;
+    rendering = false;
+    renderCloud(processWords(data.map(function(d) { return d.text; })));
+  }
+
   function loadCloud() {
     resizeCanvas();
     if (cachedData !== null) {
-      countEl.textContent = cachedData.length;
-      renderCloud(processWords(cachedData.map(function(d) { return d.text; })));
+      handleData(cachedData);
       return;
     }
     if (!API_URL) { renderCloud([]); return; }
-    fetch(API_URL)
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        cachedData = data;
-        countEl.textContent = data.length;
-        renderCloud(processWords(data.map(function(d) { return d.text; })));
-      })
-      .catch(function() { renderCloud([]); });
+    jsonp('', function(err, data) {
+      if (err) { renderCloud([]); return; }
+      handleData(data);
+    });
   }
 
   form.addEventListener('submit', function(e) {
@@ -328,30 +348,22 @@ author_profile: false
     if (!text || !API_URL) return;
 
     btn.disabled = true;
-    btn.textContent = '...';
+    btn.textContent = 'Submitting...';
 
-    var submitUrl = API_URL + '?submit=' + encodeURIComponent(text);
-    fetch(submitUrl)
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        input.value = '';
-        statusEl.textContent = 'Thanks for sharing! ✓';
-        setTimeout(function() { statusEl.textContent = ''; }, 3000);
+    jsonp('submit=' + encodeURIComponent(text), function(err, data) {
+      btn.disabled = false;
+      btn.textContent = 'Submit';
 
-        cachedData = data;
-        countEl.textContent = data.length;
-        rendering = false;
-        setTimeout(function() {
-          renderCloud(processWords(data.map(function(d) { return d.text; })));
-        }, 100);
-      })
-      .catch(function() {
+      if (err) {
         statusEl.textContent = 'Something went wrong. Please try again.';
-      })
-      .finally(function() {
-        btn.disabled = false;
-        btn.textContent = 'Submit';
-      });
+        return;
+      }
+
+      input.value = '';
+      statusEl.textContent = 'Thanks for sharing! ✓';
+      setTimeout(function() { statusEl.textContent = ''; }, 3000);
+      handleData(data);
+    });
   });
 
   var resizeTimer;
