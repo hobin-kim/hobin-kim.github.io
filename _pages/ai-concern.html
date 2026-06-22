@@ -1,0 +1,361 @@
+---
+permalink: /ai-concern/
+title: "AI Concern Cloud"
+author_profile: false
+---
+
+<div id="ac-page">
+  <div class="ac-blob ac-blob-1"></div>
+  <div class="ac-blob ac-blob-2"></div>
+  <div class="ac-blob ac-blob-3"></div>
+
+  <div id="ac-inner">
+    <a href="/" id="ac-back">← Back to site</a>
+
+    <h1 id="ac-title">What's Your AI Concern?</h1>
+    <p id="ac-subtitle">
+      I'm working on AI security &amp; privacy.<br>
+      Share what concerns you with AI, and your words join the cloud below.<br>
+      <span style="font-size: 0.85em; opacity: 0.7;">(I don't collect any personal info, just the concerns you submit.)</span>
+    </p>
+
+    <form id="ac-form">
+      <input
+        type="text"
+        id="ac-input"
+        placeholder="e.g., data leakage, deepfakes, surveillance..."
+        maxlength="200"
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="ac-btn">Submit</button>
+    </form>
+    <div id="ac-status"></div>
+
+    <div id="ac-cloud-wrap">
+      <canvas id="ac-canvas"></canvas>
+    </div>
+
+    <p id="ac-count-label"><span id="ac-count">0</span> responses so far</p>
+  </div>
+</div>
+
+<style>
+  #ac-page {
+    position: relative;
+    min-height: 80vh;
+    overflow: hidden;
+  }
+
+  /* Blobs */
+  .ac-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    pointer-events: none;
+    animation: acFloat 10s ease-in-out infinite alternate;
+  }
+  html[data-theme="dark"] .ac-blob { opacity: 0.15; }
+
+  .ac-blob-1 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, #a5d8ff, #d0bfff);
+    top: -80px; left: -60px;
+  }
+  .ac-blob-2 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, #bac8ff, #eebefa);
+    bottom: -60px; right: -40px;
+    animation-delay: -3s;
+  }
+  .ac-blob-3 {
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, #c3fae8, #a5d8ff);
+    top: 30%; right: 5%;
+    animation-delay: -6s;
+  }
+  html[data-theme="dark"] .ac-blob-1 { background: radial-gradient(circle, #1c3a5e, #2d1b69); }
+  html[data-theme="dark"] .ac-blob-2 { background: radial-gradient(circle, #1b2a6e, #3b1f5e); }
+  html[data-theme="dark"] .ac-blob-3 { background: radial-gradient(circle, #0f3b3d, #1c3a5e); }
+
+  @keyframes acFloat {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(20px, -18px) scale(1.06); }
+  }
+
+  /* Layout */
+  #ac-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    animation: acUp 0.7s ease both;
+  }
+  @keyframes acUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  #ac-back {
+    display: inline-block;
+    margin-bottom: 1.5em;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--global-text-color-light);
+    text-decoration: none;
+    border-bottom: none !important;
+  }
+  #ac-back:hover { color: var(--global-link-color); }
+
+  #ac-title {
+    font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.4em;
+    background: linear-gradient(135deg, #0969da, #8250df);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  html[data-theme="dark"] #ac-title {
+    background: linear-gradient(135deg, #79c0ff, #bc8cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  #ac-subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--global-text-color-light);
+    margin: 0 0 1.5em;
+  }
+
+  /* Form */
+  #ac-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0.8em;
+  }
+  #ac-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--global-border-color);
+    border-radius: 12px;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  #ac-input:focus { border-color: var(--global-link-color); }
+  #ac-input::placeholder { color: var(--global-text-color-light); opacity: 0.6; }
+
+  #ac-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0969da, #8250df);
+    color: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.2s;
+    white-space: nowrap;
+  }
+  #ac-btn:hover { transform: scale(1.03); }
+  #ac-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  #ac-status {
+    font-size: 14px;
+    color: var(--global-text-color-light);
+    min-height: 1.4em;
+    margin-bottom: 0.6em;
+  }
+
+  /* Cloud */
+  #ac-cloud-wrap {
+    border: 1px solid var(--global-border-color);
+    border-radius: 16px;
+    padding: 20px;
+    background: var(--global-footer-bg-color);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #ac-canvas { display: block; width: 100%; }
+
+  #ac-count-label {
+    font-size: 12px;
+    color: var(--global-text-color-light);
+    margin: 8px 0 0;
+    text-align: right;
+  }
+
+  @media (max-width: 600px) {
+    #ac-form { flex-direction: column; }
+    #ac-btn { width: 100%; }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
+<script>
+(function() {
+  var API_URL = '{{ site.wordcloud_api_url }}';
+  var canvas = document.getElementById('ac-canvas');
+  var form = document.getElementById('ac-form');
+  var input = document.getElementById('ac-input');
+  var btn = document.getElementById('ac-btn');
+  var statusEl = document.getElementById('ac-status');
+  var countEl = document.getElementById('ac-count');
+  var rendering = false;
+
+  var STOP_WORDS = new Set([
+    'a','an','the','and','or','but','in','on','at','to','for','of','with',
+    'by','from','is','it','this','that','are','was','were','be','been',
+    'being','have','has','had','do','does','did','will','would','could',
+    'should','may','might','can','i','me','my','we','our','you','your',
+    'they','them','their','he','she','his','her','its','not','no','so',
+    'if','about','how','what','which','who','when','where','why','all',
+    'each','every','both','few','more','most','other','some','such','than',
+    'too','very','just','also','as','into','like','through','after','before',
+    'think','really','much','many','well','because','there','things','people'
+  ]);
+
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
+  function getColors() {
+    return isDark()
+      ? ['#79c0ff','#bc8cff','#7ee787','#f0b860','#ff9bce','#a5d6ff','#d2a8ff']
+      : ['#4a90d9','#7c5cbf','#2da562','#c88a1e','#c74476','#3b82c4','#9466cc'];
+  }
+
+  function processWords(texts) {
+    var freq = {};
+    texts.forEach(function(text) {
+      text.toLowerCase()
+        .replace(/[^a-z0-9\s\-]/g, ' ')
+        .split(/\s+/)
+        .filter(function(w) { return w.length > 2 && !STOP_WORDS.has(w); })
+        .forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
+    });
+    return Object.entries(freq)
+      .sort(function(a, b) { return b[1] - a[1]; })
+      .slice(0, 80)
+      .map(function(e) { return [e[0], e[1]]; });
+  }
+
+  function renderCloud(words) {
+    if (rendering) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (!words.length) {
+      ctx.fillStyle = isDark() ? '#8b949e' : '#656d76';
+      ctx.font = '500 16px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Be the first to share your concern!', canvas.width / 2, canvas.height / 2);
+      return;
+    }
+
+    var maxCount = Math.max.apply(null, words.map(function(w) { return w[1]; }));
+    var colors = getColors();
+    rendering = true;
+
+    WordCloud(canvas, {
+      list: words,
+      gridSize: Math.round(8 * (canvas.width / 600)),
+      weightFactor: function(size) {
+        var scale = canvas.width / 600;
+        return Math.max(16, (size / maxCount) * 56 * scale);
+      },
+      fontFamily: 'Inter, -apple-system, sans-serif',
+      fontWeight: '700',
+      color: function() { return colors[Math.floor(Math.random() * colors.length)]; },
+      rotateRatio: 0.2,
+      rotationSteps: 2,
+      backgroundColor: 'transparent',
+      shuffle: true,
+      drawOutOfBound: false,
+      wait: 30,
+    });
+
+    setTimeout(function() { rendering = false; }, 500);
+  }
+
+  function resizeCanvas() {
+    var wrap = canvas.parentElement;
+    canvas.width = wrap.clientWidth - 40;
+    canvas.height = Math.max(250, Math.min(380, window.innerHeight * 0.35));
+  }
+
+  var cachedData = null;
+
+  function loadCloud() {
+    resizeCanvas();
+    if (cachedData !== null) {
+      countEl.textContent = cachedData.length;
+      renderCloud(processWords(cachedData.map(function(d) { return d.text; })));
+      return;
+    }
+    if (!API_URL) { renderCloud([]); return; }
+    fetch(API_URL)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        cachedData = data;
+        countEl.textContent = data.length;
+        renderCloud(processWords(data.map(function(d) { return d.text; })));
+      })
+      .catch(function() { renderCloud([]); });
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var text = input.value.trim();
+    if (!text || !API_URL) return;
+
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    fetch(API_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify({ text: text })
+    }).then(function() {
+      input.value = '';
+      statusEl.textContent = 'Thanks for sharing! ✓';
+      setTimeout(function() { statusEl.textContent = ''; }, 3000);
+
+      // Update local cache and re-render after a short delay
+      if (cachedData) cachedData.push({ text: text });
+      else cachedData = [{ text: text }];
+
+      rendering = false;
+      setTimeout(loadCloud, 300);
+    }).catch(function() {
+      statusEl.textContent = 'Something went wrong. Please try again.';
+    }).finally(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit';
+    });
+  });
+
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    rendering = false;
+    resizeTimer = setTimeout(loadCloud, 250);
+  });
+
+  new MutationObserver(function() {
+    rendering = false;
+    loadCloud();
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+  loadCloud();
+})();
+</script>
