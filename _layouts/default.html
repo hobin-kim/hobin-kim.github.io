@@ -13,6 +13,10 @@ layout: compress
 
   <body>
 
+    {% if page.url == "/" %}
+      {% include wordcloud-section.html %}
+    {% endif %}
+
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 

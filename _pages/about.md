@@ -11,7 +11,7 @@ Hello 👋 I’m Hobin, a first-year Ph.D. student at CMU, where I am fortuate t
 
 Before starting my Ph.D., I was working on network security under the supervision of Professor [Min Suk Kang](https://netsp.kaist.ac.kr/min-suk-kang) at KAIST.
 
-For anyone who wants to talk about research or any random topic, feel free to reach out!🙌
+For anyone who wants to talk about research or any random topic, feel free to reach out 🙌
 
 <h1>NEWS</h1>
 <div style="
@@ -68,8 +68,6 @@ Publications
     <a href="https://petsymposium.org/popets/2025/popets-2025-0096.php">[paper]</a>
   </li>
 </ul>
-
-{% include wordcloud-section.html %}
 
 <!-- Getting started
 ======

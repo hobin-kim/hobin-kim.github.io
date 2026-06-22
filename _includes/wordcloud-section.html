@@ -1,110 +1,290 @@
-<!-- Interactive Word Cloud Section -->
-<div id="wc-section">
-  <h1>What's Your AI Concern?</h1>
-  <p class="wc-desc">
-    I'm researching AI security &amp; privacy. Share what concerns you most &mdash; your response joins the word cloud below.
-  </p>
+<!-- Full-screen Word Cloud Splash -->
+<div id="wc-splash">
+  <!-- Floating cloud blobs -->
+  <div class="wc-blob wc-blob-1"></div>
+  <div class="wc-blob wc-blob-2"></div>
+  <div class="wc-blob wc-blob-3"></div>
+  <div class="wc-blob wc-blob-4"></div>
 
-  <form id="wc-form">
-    <input
-      type="text"
-      id="wc-input"
-      placeholder="e.g., data leakage, deepfakes, surveillance..."
-      maxlength="200"
-      required
-    >
-    <button type="submit" id="wc-btn">Submit</button>
-  </form>
+  <div id="wc-splash-inner">
+    <h1 id="wc-title">What's Your AI Concern?</h1>
+    <p id="wc-subtitle">
+      I'm researching AI security &amp; privacy.<br>
+      Share what concerns you &mdash; your words join the cloud.
+    </p>
 
-  <div id="wc-status"></div>
+    <form id="wc-form">
+      <input
+        type="text"
+        id="wc-input"
+        placeholder="e.g., data leakage, deepfakes, surveillance..."
+        maxlength="200"
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="wc-btn">Submit</button>
+    </form>
+    <div id="wc-status"></div>
 
-  <div id="wc-cloud-wrap">
-    <canvas id="wc-canvas"></canvas>
+    <div id="wc-cloud-wrap">
+      <canvas id="wc-canvas"></canvas>
+    </div>
+
+    <p id="wc-count-label"><span id="wc-count">0</span> responses so far</p>
+
+    <button id="wc-enter" onclick="closeSplash()">
+      Enter Site <span style="margin-left:6px;">→</span>
+    </button>
   </div>
-
-  <p id="wc-footer">
-    <span id="wc-count">0</span> responses collected
-  </p>
 </div>
 
 <style>
-  #wc-section {
-    margin-top: 2em;
-  }
-  .wc-desc {
-    color: var(--global-text-color-light);
-    margin-bottom: 1.2em;
-  }
-  #wc-form {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 1.2em;
-  }
-  #wc-input {
-    flex: 1;
-    padding: 10px 14px;
-    border: 1px solid var(--global-border-color);
-    border-radius: 8px;
-    background: var(--global-bg-color);
-    color: var(--global-text-color);
-    font-family: inherit;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  #wc-input:focus {
-    border-color: var(--global-link-color);
-  }
-  #wc-btn {
-    padding: 10px 22px;
-    border: none;
-    border-radius: 8px;
-    background: var(--global-link-color);
-    color: #fff;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    white-space: nowrap;
-  }
-  #wc-btn:hover { opacity: 0.85; }
-  #wc-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  #wc-status {
-    font-size: 14px;
-    color: var(--global-text-color-light);
-    margin-bottom: 0.8em;
-    min-height: 1.2em;
-  }
-  #wc-cloud-wrap {
-    border: 1px solid var(--global-border-color);
-    border-radius: 12px;
-    padding: 16px;
-    background: var(--global-footer-bg-color);
-    min-height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #wc-canvas {
-    display: block;
-    width: 100%;
-  }
-  #wc-footer {
-    font-size: 12px;
-    color: var(--global-text-color-light);
-    margin-top: 8px;
-    text-align: right;
-  }
-  @media (max-width: 600px) {
-    #wc-form { flex-direction: column; }
-    #wc-btn { width: 100%; }
-  }
+/* ===== Splash Overlay ===== */
+#wc-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  background: linear-gradient(135deg, #e8f0fe 0%, #f5f0ff 40%, #fff 100%);
+}
+html[data-theme="dark"] #wc-splash {
+  background: linear-gradient(135deg, #0d1117 0%, #161b2e 40%, #1a1025 100%);
+}
+
+#wc-splash.hide {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+/* ===== Floating Cloud Blobs ===== */
+.wc-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: blobFloat 8s ease-in-out infinite alternate;
+}
+html[data-theme="dark"] .wc-blob { opacity: 0.25; }
+
+.wc-blob-1 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #a5d8ff, #d0bfff);
+  top: -10%; left: -5%;
+  animation-delay: 0s;
+}
+.wc-blob-2 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, #bac8ff, #eebefa);
+  bottom: -8%; right: -3%;
+  animation-delay: -2s;
+}
+.wc-blob-3 {
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, #c3fae8, #a5d8ff);
+  top: 20%; right: 10%;
+  animation-delay: -4s;
+}
+.wc-blob-4 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #eebefa, #fcc2d7);
+  bottom: 15%; left: 8%;
+  animation-delay: -6s;
+}
+
+html[data-theme="dark"] .wc-blob-1 { background: radial-gradient(circle, #1c3a5e, #2d1b69); }
+html[data-theme="dark"] .wc-blob-2 { background: radial-gradient(circle, #1b2a6e, #3b1f5e); }
+html[data-theme="dark"] .wc-blob-3 { background: radial-gradient(circle, #0f3b3d, #1c3a5e); }
+html[data-theme="dark"] .wc-blob-4 { background: radial-gradient(circle, #3b1f5e, #5c1a3e); }
+
+@keyframes blobFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -25px) scale(1.08); }
+}
+
+/* ===== Inner Content ===== */
+#wc-splash-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  width: 90%;
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#wc-title {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.4em;
+  color: #1f2328;
+  background: linear-gradient(135deg, #0969da, #8250df);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+html[data-theme="dark"] #wc-title {
+  background: linear-gradient(135deg, #79c0ff, #bc8cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+#wc-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #656d76;
+  margin: 0 0 1.5em;
+}
+html[data-theme="dark"] #wc-subtitle { color: #8b949e; }
+
+/* ===== Form ===== */
+#wc-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0.8em;
+}
+#wc-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  color: #1f2328;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+#wc-input:focus { border-color: #0969da; }
+#wc-input::placeholder { color: #8b949e; }
+
+html[data-theme="dark"] #wc-input {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: #e6edf3;
+}
+html[data-theme="dark"] #wc-input:focus { border-color: #58a6ff; }
+
+#wc-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0969da, #8250df);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
+  white-space: nowrap;
+}
+#wc-btn:hover { transform: scale(1.03); }
+#wc-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+#wc-status {
+  font-size: 14px;
+  color: #656d76;
+  min-height: 1.2em;
+  margin-bottom: 0.5em;
+}
+html[data-theme="dark"] #wc-status { color: #8b949e; }
+
+/* ===== Word Cloud ===== */
+#wc-cloud-wrap {
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(12px);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html[data-theme="dark"] #wc-cloud-wrap {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.06);
+}
+
+#wc-canvas { display: block; width: 100%; }
+
+#wc-count-label {
+  font-size: 12px;
+  color: #8b949e;
+  margin: 6px 0 1.5em;
+}
+
+/* ===== Enter Button ===== */
+#wc-enter {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #1f2328;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.4s;
+}
+#wc-enter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+html[data-theme="dark"] #wc-enter {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: #e6edf3;
+}
+html[data-theme="dark"] #wc-enter:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  #wc-form { flex-direction: column; }
+  #wc-btn { width: 100%; }
+  .wc-blob { filter: blur(60px); }
+}
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
 <script>
+function closeSplash() {
+  var splash = document.getElementById('wc-splash');
+  splash.classList.add('hide');
+  document.body.style.overflow = '';
+  setTimeout(function() { splash.style.display = 'none'; }, 700);
+  try { sessionStorage.setItem('wc-seen', '1'); } catch(e) {}
+}
+
 (function() {
+  // Skip splash if already seen this session
+  try {
+    if (sessionStorage.getItem('wc-seen')) {
+      var s = document.getElementById('wc-splash');
+      s.style.display = 'none';
+      return;
+    }
+  } catch(e) {}
+
+  document.body.style.overflow = 'hidden';
+
   var API_URL = '{{ site.wordcloud_api_url }}';
   var canvas = document.getElementById('wc-canvas');
   var form = document.getElementById('wc-form');
@@ -122,17 +302,17 @@
     'if','about','how','what','which','who','when','where','why','all',
     'each','every','both','few','more','most','other','some','such','than',
     'too','very','just','also','as','into','like','through','after','before',
-    'think','about','really','much','many','well','because','there'
+    'think','really','much','many','well','because','there','things','people'
   ]);
 
+  // Cloud-like soft colors
   function isDark() {
     return document.documentElement.getAttribute('data-theme') === 'dark';
   }
-
   function getColors() {
     return isDark()
-      ? ['#58a6ff','#79c0ff','#3fb950','#d29922','#f85149','#bc8cff','#ff7b72']
-      : ['#0969da','#0550ae','#1a7f37','#bf8700','#cf222e','#8250df','#e16f24'];
+      ? ['#79c0ff','#bc8cff','#7ee787','#f0b860','#ff9bce','#a5d6ff','#d2a8ff']
+      : ['#4a90d9','#7c5cbf','#2da562','#c88a1e','#c74476','#3b82c4','#9466cc'];
   }
 
   function processWords(texts) {
@@ -156,7 +336,7 @@
 
     if (!words.length) {
       ctx.fillStyle = isDark() ? '#8b949e' : '#656d76';
-      ctx.font = '16px Inter, sans-serif';
+      ctx.font = '500 16px Inter, sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText('Be the first to share your concern!', canvas.width / 2, canvas.height / 2);
       return;
@@ -170,12 +350,12 @@
       gridSize: Math.round(8 * (canvas.width / 600)),
       weightFactor: function(size) {
         var scale = canvas.width / 600;
-        return Math.max(13, (size / maxCount) * 48 * scale);
+        return Math.max(14, (size / maxCount) * 52 * scale);
       },
       fontFamily: 'Inter, -apple-system, sans-serif',
-      fontWeight: 600,
+      fontWeight: '700',
       color: function() { return colors[Math.floor(Math.random() * colors.length)]; },
-      rotateRatio: 0.25,
+      rotateRatio: 0.2,
       rotationSteps: 2,
       backgroundColor: 'transparent',
       shuffle: true,
@@ -186,7 +366,7 @@
   function resizeCanvas() {
     var wrap = canvas.parentElement;
     canvas.width = wrap.clientWidth - 32;
-    canvas.height = Math.max(220, Math.min(350, window.innerHeight * 0.3));
+    canvas.height = Math.max(200, Math.min(320, window.innerHeight * 0.28));
   }
 
   var cachedData = null;
@@ -199,7 +379,6 @@
       return;
     }
     if (!API_URL) { renderCloud([]); return; }
-
     fetch(API_URL)
       .then(function(r) { return r.json(); })
       .then(function(data) {
@@ -226,8 +405,8 @@
       input.value = '';
       statusEl.textContent = 'Thanks for sharing! ✓';
       setTimeout(function() { statusEl.textContent = ''; }, 3000);
-      if (cachedData) { cachedData.push({ text: text }); }
-      else { cachedData = [{ text: text }]; }
+      if (cachedData) cachedData.push({ text: text });
+      else cachedData = [{ text: text }];
       loadCloud();
     }).catch(function() {
       statusEl.textContent = 'Something went wrong. Please try again.';
