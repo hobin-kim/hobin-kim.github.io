@@ -188,8 +188,9 @@ author_profile: false
         if (words.length >= 2 && words.length <= 3) {
           var joined = words.join(' ');
           freq[joined] = (freq[joined] || 0) + 1;
+        } else {
+          words.forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
         }
-        words.forEach(function(w) { freq[w] = (freq[w] || 0) + 1; });
       });
     });
     return Object.entries(freq)
