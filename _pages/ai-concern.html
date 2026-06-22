@@ -13,17 +13,16 @@ author_profile: false
       <span style="font-size: 0.85em; opacity: 0.7;">(I don't collect any personal info, just the concerns you submit.)</span>
     </p>
 
-    <form id="ac-form">
+    <div id="ac-form">
       <input
         type="text"
         id="ac-input"
         placeholder="e.g., data leakage, deepfakes, surveillance..."
         maxlength="200"
         autocomplete="off"
-        required
       >
-      <button type="submit" id="ac-btn">Submit</button>
-    </form>
+      <button type="button" id="ac-btn" onclick="submitConcern()">Submit</button>
+    </div>
     <div id="ac-status"></div>
 
     <div id="ac-cloud-wrap">
@@ -286,8 +285,8 @@ author_profile: false
     });
   }
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+  // Global submit function — called by button onclick
+  window.submitConcern = function() {
     var text = input.value.trim();
     if (!text || !API_URL) return;
 
@@ -308,6 +307,11 @@ author_profile: false
       setTimeout(function() { statusEl.textContent = ''; }, 3000);
       handleData(data);
     });
+  };
+
+  // Allow Enter key to submit
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); window.submitConcern(); }
   });
 
   var resizeTimer;
