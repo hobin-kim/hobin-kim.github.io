@@ -148,6 +148,9 @@ social:
   links: # An array of links to social media profiles
 
 
+# Word Cloud API (Google Apps Script URL)
+wordcloud_api_url            : "https://script.google.com/macros/s/AKfycbz9a3HeJcvf2EZ2rtEQEiP9Qc1Oppat60mi5gU9dNfE7ePTlAh513TAEdZPj2rUahaw/exec"
+
 # Analytics
 analytics:
   provider               :  "google-analytics-4"
