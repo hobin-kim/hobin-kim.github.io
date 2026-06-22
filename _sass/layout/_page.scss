@@ -73,10 +73,12 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    color: var(--global-link-color);
+    border-bottom: 1px solid transparent;
 
     &:hover {
-      text-decoration: underline;
+      border-bottom-color: var(--global-link-color);
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);

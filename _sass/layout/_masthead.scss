@@ -4,7 +4,9 @@
 
 .masthead {
   position: fixed;
-  background: var(--global-bg-color);
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+          backdrop-filter: saturate(180%) blur(16px);
   height: fit-content;
   top: 0;
   width: 100%;
@@ -27,7 +29,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.5em 1em;
+    padding: 0.5em 1.5em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -44,6 +46,10 @@
   }
 }
 
+html[data-theme="dark"] .masthead {
+  background: rgba(13, 17, 23, 0.85);
+}
+
 .masthead__menu {
 
   ul {
@@ -55,7 +61,7 @@
 }
 
 .masthead__menu-item {
-  background-color: var(--global-bg-color);
+  background-color: transparent;
   display: block;
   list-style-type: none;
   white-space: nowrap;

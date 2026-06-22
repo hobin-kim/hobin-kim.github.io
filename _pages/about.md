@@ -17,13 +17,14 @@ For anyone who wants to talk about research or any random topic, feel free to re
 <div style="
   max-height: 190px;
   overflow-y: auto;
-  border: 1px solid #eee;
+  border: 1px solid var(--global-border-color);
   border-radius: 8px;
   padding: 8px 12px;
-  background-color: #fdfdfd;
+  background-color: var(--global-footer-bg-color);
+  color: var(--global-text-color);
   scroll-behavior: smooth;
 ">
-  <table style="border-collapse: collapse; border: none; font-size: 16px; width: 100%;">
+  <table style="border-collapse: collapse; border: none; font-size: 16px; width: 100%; color: inherit;">
     <tr>
       <td style="padding: 4px 12px; border: none;"><strong>Aug. 2025</strong></td>
       <td style="padding: 4px 0; border: none;">🥳 I'm excited to begin my Ph.D. journey. Stay tuned for what's next!</td>
