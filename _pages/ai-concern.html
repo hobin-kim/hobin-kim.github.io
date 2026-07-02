@@ -194,7 +194,12 @@ author_profile: false
       .map(function(e) { return [e[0], e[1]]; });
   }
 
+  var renderToken = 0;
+
   function renderCloud(words) {
+    var myToken = ++renderToken;
+
+    try { WordCloud.stop(); } catch (e) {}
     WordCloud(canvas, { list: [] });
 
     var ctx = canvas.getContext('2d');
@@ -212,6 +217,9 @@ author_profile: false
     var colors = getColors();
 
     setTimeout(function() {
+      // A newer render call superseded this one (e.g. resize + theme change
+      // firing close together) — bail out so we don't race the canvas.
+      if (myToken !== renderToken) return;
       WordCloud(canvas, {
         list: words,
         gridSize: Math.round(8 * (canvas.width / 600)),
@@ -309,7 +317,15 @@ author_profile: false
     resizeTimer = setTimeout(loadCloud, 250);
   });
 
+  var lastIsDark = isDark();
   new MutationObserver(function() {
+    // The theme script re-applies data-theme on every page load (even to
+    // the same value), which mutates the attribute without changing it.
+    // Only re-render when the theme actually flips, otherwise this fires
+    // a second, overlapping render right on top of the initial page load.
+    var nowDark = isDark();
+    if (nowDark === lastIsDark) return;
+    lastIsDark = nowDark;
     loadCloud();
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
