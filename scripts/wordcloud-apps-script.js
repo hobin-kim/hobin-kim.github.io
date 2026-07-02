@@ -18,27 +18,43 @@
  */
 
 function doGet(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  // Use the first sheet by index, NOT getActiveSheet(). getActiveSheet()
+  // reflects whatever tab a human last clicked on in the Sheets UI, so if
+  // the sheet owner is looking at another tab, submissions silently land
+  // (or get read from) the wrong place.
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
 
-  // Handle submit via GET parameter
-  var submitText = (e.parameter && e.parameter.submit) || '';
-  if (submitText) {
-    var text = String(submitText).trim().substring(0, 200);
-    if (text) {
-      sheet.appendRow([text, new Date()]);
-    }
-  }
+  // Prevent concurrent requests from racing on appendRow/getDataRange,
+  // which can otherwise silently drop a submission when two people
+  // submit at nearly the same time.
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
 
-  // Return all responses
-  var data = sheet.getDataRange().getValues();
-  var responses = [];
-  for (var i = 1; i < data.length; i++) {
-    if (data[i][0]) {
-      responses.push({
-        text: String(data[i][0]),
-        timestamp: data[i][1]
-      });
+  var responses;
+  try {
+    // Handle submit via GET parameter
+    var submitText = (e.parameter && e.parameter.submit) || '';
+    if (submitText) {
+      var text = String(submitText).trim().substring(0, 200);
+      if (text) {
+        sheet.appendRow([text, new Date()]);
+        SpreadsheetApp.flush();
+      }
     }
+
+    // Return all responses
+    var data = sheet.getDataRange().getValues();
+    responses = [];
+    for (var i = 1; i < data.length; i++) {
+      if (data[i][0]) {
+        responses.push({
+          text: String(data[i][0]),
+          timestamp: data[i][1]
+        });
+      }
+    }
+  } finally {
+    lock.releaseLock();
   }
 
   var json = JSON.stringify(responses);
