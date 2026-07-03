@@ -20,7 +20,6 @@ author_profile: false
         placeholder="e.g., data leakage, deepfakes, surveillance..."
         maxlength="200"
         autocomplete="off"
-        onkeydown="if(event.key==='Enter'){event.preventDefault();submitConcern();}"
       >
       <button type="button" id="ac-btn" onclick="submitConcern()">Submit</button>
     </div>
@@ -293,6 +292,7 @@ author_profile: false
   }
 
   window.submitConcern = function() {
+    if (btn.disabled) return;
     var text = input.value.trim();
     if (!text || !API_URL) return;
 
@@ -316,7 +316,7 @@ author_profile: false
   };
 
   input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { e.preventDefault(); window.submitConcern(); }
+    if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); window.submitConcern(); }
   });
 
   var resizeTimer;
