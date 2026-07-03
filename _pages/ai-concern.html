@@ -216,9 +216,7 @@ author_profile: false
     var maxCount = Math.max.apply(null, words.map(function(w) { return w[1]; }));
     var colors = getColors();
 
-    setTimeout(function() {
-      // A newer render call superseded this one (e.g. resize + theme change
-      // firing close together) — bail out so we don't race the canvas.
+    var draw = function() {
       if (myToken !== renderToken) return;
       WordCloud(canvas, {
         list: words,
@@ -233,10 +231,20 @@ author_profile: false
         rotateRatio: 0.2,
         rotationSteps: 2,
         backgroundColor: 'transparent',
-        shuffle: true,
+        shuffle: false,
         drawOutOfBound: false,
+        shrinkToFit: true,
       });
-    }, 50);
+    };
+
+    if (document.fonts && document.fonts.load) {
+      Promise.all([
+        document.fonts.load('700 16px Inter'),
+        document.fonts.load('700 56px Inter')
+      ]).then(function() { setTimeout(draw, 50); }, function() { setTimeout(draw, 50); });
+    } else {
+      setTimeout(draw, 50);
+    }
   }
 
   function resizeCanvas() {
@@ -319,10 +327,6 @@ author_profile: false
 
   var lastIsDark = isDark();
   new MutationObserver(function() {
-    // The theme script re-applies data-theme on every page load (even to
-    // the same value), which mutates the attribute without changing it.
-    // Only re-render when the theme actually flips, otherwise this fires
-    // a second, overlapping render right on top of the initial page load.
     var nowDark = isDark();
     if (nowDark === lastIsDark) return;
     lastIsDark = nowDark;
