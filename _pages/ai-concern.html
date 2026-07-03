@@ -316,7 +316,7 @@ author_profile: false
   };
 
   input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); window.submitConcern(); }
+    if (e.key === 'Enter' && !e.isComposing && e.keyCode !== 229) { e.preventDefault(); window.submitConcern(); }
   });
 
   var resizeTimer;
