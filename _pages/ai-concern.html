@@ -213,6 +213,7 @@ author_profile: false
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!words.length) {
+      canvas.style.visibility = 'visible';
       ctx.fillStyle = isDark() ? '#8b949e' : '#656d76';
       ctx.font = '500 16px Inter, sans-serif';
       ctx.textAlign = 'center';
@@ -225,14 +226,34 @@ author_profile: false
     var colorOf = {};
     words.forEach(function(w, i) { colorOf[w[0]] = colors[i % colors.length]; });
 
-    var draw = function() {
+    /* Shrink every word by the same factor until all of them fit, so words
+       with equal counts always render at equal sizes. Only if the floor is
+       reached does the last pass fall back to per-word shrinking. */
+    var MIN_FIT = 0.35;
+    var draw = function(fit, lastTry) {
       if (myToken !== renderToken) return;
+      var missed = 0;
+      var onDrawn = function(e) { if (!e.detail.drawn) missed++; };
+      var onStop = function() {
+        canvas.removeEventListener('wordclouddrawn', onDrawn);
+        canvas.removeEventListener('wordcloudstop', onStop);
+        if (myToken !== renderToken) return;
+        if (!missed || lastTry) {
+          canvas.style.visibility = 'visible';
+          return;
+        }
+        var next = Math.max(MIN_FIT, fit * 0.85);
+        draw(next, next === MIN_FIT);
+      };
+      canvas.addEventListener('wordclouddrawn', onDrawn);
+      canvas.addEventListener('wordcloudstop', onStop);
+      canvas.style.visibility = 'hidden';
       WordCloud(canvas, {
-        list: words,
+        list: words.map(function(w) { return [w[0], w[1]]; }),
         gridSize: Math.round(8 * (canvas.width / 600)),
         weightFactor: function(size) {
           var scale = canvas.width / 600;
-          return Math.max(16, (size / maxCount) * 56 * scale);
+          return Math.max(16, (size / maxCount) * 56 * scale) * fit;
         },
         fontFamily: 'Inter, -apple-system, sans-serif',
         fontWeight: '700',
@@ -242,17 +263,18 @@ author_profile: false
         backgroundColor: 'transparent',
         shuffle: false,
         drawOutOfBound: false,
-        shrinkToFit: true,
+        shrinkToFit: !!lastTry,
       });
     };
+    var start = function() { draw(1, false); };
 
     if (document.fonts && document.fonts.load) {
       Promise.all([
         document.fonts.load('700 16px Inter'),
         document.fonts.load('700 56px Inter')
-      ]).then(function() { setTimeout(draw, 50); }, function() { setTimeout(draw, 50); });
+      ]).then(function() { setTimeout(start, 50); }, function() { setTimeout(start, 50); });
     } else {
-      setTimeout(draw, 50);
+      setTimeout(start, 50);
     }
   }
 
