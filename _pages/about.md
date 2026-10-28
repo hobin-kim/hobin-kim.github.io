@@ -61,8 +61,8 @@ Publications
 <ul>
   <li>
     <strong> Security and Privacy Prompts in the Wild: What Users Ask LLMs and How LLMs Respond </strong><br>
-    <b><u>Hobin Kim</u></b>, Xiaoyuan Wu, Omer Akgul, Lujo Bauer, Nicolas Christin <br>
-    In EMNLP'26<br>
+    <b><u>Hobin Kim</u></b>*, Xiaoyuan Wu*, Omer Akgul, Lujo Bauer, Nicolas Christin <br>
+    In EMNLP'26 (*Equal contribution)<br>
     <a href="https://aclanthology.org/2026.emnlp-main.2571/">[paper]</a>
   </li>
 </ul>
