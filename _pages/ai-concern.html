@@ -173,24 +173,32 @@ author_profile: false
   }
   function getColors() {
     return isDark()
-      ? ['#79c0ff','#bc8cff','#7ee787','#f0b860','#ff9bce','#a5d6ff','#d2a8ff']
-      : ['#4a90d9','#7c5cbf','#2da562','#c88a1e','#c74476','#3b82c4','#9466cc'];
+      ? ['#ff7b72','#ffa657','#e3b341','#7ee787','#56d4dd','#79c0ff','#d2a8ff','#ff9bce','#d4a373','#a5b4fc']
+      : ['#d73a49','#e36209','#b08800','#22863a','#0598a0','#0366d6','#6f42c1','#d03592','#8a5a2b','#4c5fd5'];
   }
 
   function processWords(texts) {
     var freq = {};
+    var display = {};
     texts.forEach(function(text) {
       text.split(/,/).forEach(function(phrase) {
-        var trimmed = phrase.toLowerCase().trim().replace(/[^a-z0-9\s\-]/g, ' ').replace(/\s+/g, ' ').trim();
-        if (trimmed.length > 1) {
-          freq[trimmed] = (freq[trimmed] || 0) + 1;
+        var cleaned = phrase.trim().replace(/[^A-Za-z0-9\s\-]/g, ' ').replace(/\s+/g, ' ').trim();
+        if (cleaned.length > 1) {
+          var key = cleaned.toLowerCase();
+          freq[key] = (freq[key] || 0) + 1;
+          display[key] = display[key] || {};
+          display[key][cleaned] = (display[key][cleaned] || 0) + 1;
         }
       });
     });
+    function mostUsedSpelling(key) {
+      var forms = display[key];
+      return Object.keys(forms).sort(function(a, b) { return forms[b] - forms[a]; })[0];
+    }
     return Object.entries(freq)
       .sort(function(a, b) { return b[1] - a[1]; })
       .slice(0, 80)
-      .map(function(e) { return [e[0], e[1]]; });
+      .map(function(e) { return [mostUsedSpelling(e[0]), e[1]]; });
   }
 
   var renderToken = 0;
@@ -214,6 +222,8 @@ author_profile: false
 
     var maxCount = Math.max.apply(null, words.map(function(w) { return w[1]; }));
     var colors = getColors();
+    var colorOf = {};
+    words.forEach(function(w, i) { colorOf[w[0]] = colors[i % colors.length]; });
 
     var draw = function() {
       if (myToken !== renderToken) return;
@@ -226,7 +236,7 @@ author_profile: false
         },
         fontFamily: 'Inter, -apple-system, sans-serif',
         fontWeight: '700',
-        color: function() { return colors[Math.floor(Math.random() * colors.length)]; },
+        color: function(word) { return colorOf[word]; },
         rotateRatio: 0.2,
         rotationSteps: 2,
         backgroundColor: 'transparent',
