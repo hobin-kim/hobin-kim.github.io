@@ -52,6 +52,17 @@ For anyone who wants to talk about research or any random topic, feel free to re
 
 Publications
 ======
+### 2026
+
+<ul>
+  <li>
+    <strong> Security and Privacy Prompts in the Wild: What Users Ask LLMs and How LLMs Respond </strong><br>
+    <b><u>Hobin Kim</u></b>, Xiaoyuan Wu, Omer Akgul, Lujo Bauer, Nicolas Christin <br>
+    In EMNLP'26<br>
+    <a href="https://aclanthology.org/2026.emnlp-main.2571/">[paper]</a>
+  </li>
+</ul>
+
 ### 2025
 
 <ul>
