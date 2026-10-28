@@ -30,6 +30,10 @@ For anyone who wants to talk about research or any random topic, feel free to re
       <col>
     </colgroup>
     <tr>
+      <td style="padding: 4px 12px; border: none; white-space: nowrap; vertical-align: top;"><strong>Aug. 2026</strong></td>
+      <td style="padding: 4px 0; border: none; vertical-align: top;">🎉 My first Ph.D. paper on how LLMs handle users' security and privacy questions was accepted to EMNLP 2026.</td>
+    </tr>
+    <tr>
       <td style="padding: 4px 12px; border: none; white-space: nowrap; vertical-align: top;"><strong>Aug. 2025</strong></td>
       <td style="padding: 4px 0; border: none; vertical-align: top;">🥳 I’m excited to begin my Ph.D. journey. Stay tuned for what’s next!</td>
     </tr>
