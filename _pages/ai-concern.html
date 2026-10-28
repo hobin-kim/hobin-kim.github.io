@@ -43,7 +43,7 @@ author_profile: false
   #ac-inner {
     position: relative;
     z-index: 1;
-    max-width: 720px;
+    max-width: 900px;
     margin: 0 auto;
     animation: acUp 0.7s ease both;
   }
@@ -249,7 +249,7 @@ author_profile: false
   function resizeCanvas() {
     var wrap = canvas.parentElement;
     canvas.width = wrap.clientWidth - 40;
-    canvas.height = Math.max(250, Math.min(380, window.innerHeight * 0.35));
+    canvas.height = Math.max(320, Math.min(600, window.innerHeight * 0.55));
   }
 
   var cachedData = null;
